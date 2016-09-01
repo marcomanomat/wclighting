@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+body {
+    background-image: url("http://img.wallpaperfolder.com/f/50F10845081C/white-christmas-light-jpg.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

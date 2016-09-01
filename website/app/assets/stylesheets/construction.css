@@ -1,0 +1,48 @@
+.logo-space {
+  width: 50%;
+  height: 50%;
+  max-width: 350px;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  padding: 19px 29px 29px;
+  z-index: 500;
+  -webkit-border-radius: 9px;
+     -moz-border-radius: 9px;
+          border-radius: 9px;
+          z-index: 4;
+}
+section#contact-info {
+font-family: Impact, sans-serif;
+color: #0d0c4b;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px;
+  padding: 20px;
+}
+section#contact-info p {
+  display: inline;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-right: 3px solid;
+  border-right-color: #feb91c;
+}
+/* used the last-of-type selector
+to avoid the appearance of an extra
+border. */
+section#contact-info p:last-of-type {
+  border-right: none;
+}
+
+#message {
+color: #0d0c4b;
+font-size: 20px;
+font-family: Copperplate, sans-serif;
+text-align: center;
+position: absolute;
+/*	display: block;*/
+}
