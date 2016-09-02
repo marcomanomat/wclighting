@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160901214536) do
+ActiveRecord::Schema.define(version: 20160902193706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,25 +30,36 @@ ActiveRecord::Schema.define(version: 20160901214536) do
     t.datetime "updated_at",                      null: false
   end
 
+  create_table "companies", force: :cascade do |t|
+    t.string   "name",       limit: 64, null: false
+    t.string   "phone",      limit: 10, null: false
+    t.string   "address",               null: false
+    t.text     "email",                 null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
   create_table "employees", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "title"
+    t.string   "first_name", limit: 50,  null: false
+    t.string   "last_name",  limit: 50,  null: false
+    t.string   "title",      limit: 128, null: false
+    t.text     "email",                  null: false
+    t.string   "phone",      limit: 10,  null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["email"], name: "index_employees_on_email", unique: true, using: :btree
+  end
+
+  create_table "manufacturers", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.text     "profile",    null: false
+    t.text     "website",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "manufacturers", force: :cascade do |t|
-    t.string   "name"
-    t.text     "profile"
-    t.integer  "product_type_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
   create_table "product_types", force: :cascade do |t|
-    t.string   "category"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
