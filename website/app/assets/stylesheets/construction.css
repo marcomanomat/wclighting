@@ -31,6 +31,12 @@ section#contact-info p {
   border-right: 3px solid;
   border-right-color: #feb91c;
 }
+
+section#contact-info a {
+  color: #0d0c4b;
+  text-decoration: none;
+}
+
 /* used the last-of-type selector
 to avoid the appearance of an extra
 border. */
