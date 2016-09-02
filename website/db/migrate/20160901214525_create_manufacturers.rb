@@ -1,12 +1,12 @@
 class CreateManufacturers < ActiveRecord::Migration[5.0]
   def change
-    create_table :manufacturers do |t|
-    	t.string :name
-    	t.text :profile
-    	t.integer :product_type_id
-			# logo
-			# pictures   	
-      t.timestamps
+    create_table 	:manufacturers do |t|
+    	t.string 		:name, null: false
+    	t.text			:profile, null: false
+    	t.text			:website, null: false
+
+      t.timestamps null: false
     end
+
   end
 end
