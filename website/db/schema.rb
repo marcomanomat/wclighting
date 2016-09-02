@@ -31,16 +31,24 @@ ActiveRecord::Schema.define(version: 20160901214536) do
   end
 
   create_table "employees", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "manufacturers", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.text     "profile"
+    t.integer  "product_type_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "product_types", force: :cascade do |t|
+    t.string   "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
