@@ -3,12 +3,31 @@
   <head>
     <title>West Coast Lighting</title>
     <%= csrf_meta_tags %>
-
+    <%= favicon_link_tag 'favicon.ico' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div class="navbar-fixed">
+     <nav>
+       <div class="nav-wrapper indigo">
+         <a href="/" class="brand-logo yellow-text text-darken-2">West Coast Lighting</a>
+         <a href="#" data-activates="mobile-demo" class="right button-collapse yellow-text text-darken-2"><i class="material-icons">menu</i></a>
+         <ul class="right hide-on-med-and-down">
+           <li><a href="#" class="yellow-text text-darken-2">Manufacturers</a></li>
+           <li><a href="#" class="yellow-text text-darken-2">About</a></li>
+           <li><a href="#" class="yellow-text text-darken-2">Team</a></li>
+         </ul>
+         <ul class="side-nav indigo lighten-1" id="mobile-demo">
+           <li><a href="#" class="yellow-text text-darken-2">Manufacturers</a></li>
+           <li><a href="#" class="yellow-text text-darken-2">About</a></li>
+           <li><a href="#" class="yellow-text text-darken-2">Team</a></li>
+         </ul>
+       </div>
+     </nav>
+    </div>
     <%= yield %>
   </body>
 </html>

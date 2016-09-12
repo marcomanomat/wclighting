@@ -1,3 +1,51 @@
 // Place all the styles related to the construction_controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#maintenance {
+  @extend .indigo-text, .text-darken-4;
+  background-image: url("https://s3.amazonaws.com/westcoastlighting/white-lights.jpeg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  .logo-space {
+    top: 0; left: 0; bottom: 0; right: 0;
+    padding: 50px 29px;
+    z-index: 500;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+    z-index: 4;
+    #message {
+      font-size: 20px;
+      font-family: Arial;
+      text-align: center;
+    }
+  }
+  #contact-info {
+    @extend .indigo-text, .text-darken-4;
+    font-family: Impact;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px;
+    padding: 20px;
+    p {
+      display: inline;
+      padding-right: 20px;
+      padding-left: 20px;
+      border-right: 3px solid;
+      border-right-color: #fbc02d;
+      &:last-of-type {
+        border-right: none;
+      }
+      a {
+        @extend .indigo-text, .text-darken-4;
+        text-decoration: none;
+      }
+    }
+  }
+}
