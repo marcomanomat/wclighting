@@ -3,5 +3,6 @@ class Admin < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
 	# :database_authenticatable, :registerable,
   # :recoverable, :rememberable, :trackable, :validatable
-  devise :database_authenticatable, :trackable, :timeoutable, :lockable 
+  devise :database_authenticatable, :trackable, :timeoutable, :lockable
+  validates :email, presence: true 
 end
