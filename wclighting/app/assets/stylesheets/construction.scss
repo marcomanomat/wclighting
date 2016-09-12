@@ -4,7 +4,7 @@
 
 #maintenance {
   @extend .indigo-text, .text-darken-4;
-  background-image: url("https://s3.amazonaws.com/westcoastlighting/white-lights.jpeg");
+  background-image: image_url("white-lights.jpeg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -18,7 +18,7 @@
     border-radius: 9px;
     z-index: 4;
     #message {
-      font-size: 20px;
+      font-size: 1.5em;
       font-family: Arial;
       text-align: center;
     }
