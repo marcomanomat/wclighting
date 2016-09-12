@@ -1,7 +1,7 @@
 class ConstructionController < ApplicationController
 
   def index
-    #static construction page 
+    render layout: "maintenance"
   end
 
 end

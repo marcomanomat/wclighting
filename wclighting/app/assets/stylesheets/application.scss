@@ -13,10 +13,4 @@
  *= require_tree .
  *= require_self
  */
-body {
-    background-image: url("https://s3.amazonaws.com/westcoastlighting/white-lights.jpeg");
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
+@import "materialize";
