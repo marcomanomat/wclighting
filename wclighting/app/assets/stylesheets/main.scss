@@ -5,6 +5,21 @@
 // Gainsboro:           #D8DFE7
 // Deep Lemon:          #FFC423
 
+html {
+  font-family: 'Fjalla One', sans-serif;
+}
+
 body {
   @extend .indigo, .lighten-5;
+}
+
+.nav-wrapper {
+  a {
+    font-size: 1.7em;
+    text-shadow: 0px 1px black;
+  }
+}
+
+.parallax-container {
+  height: 600px;
 }

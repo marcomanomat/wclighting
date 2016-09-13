@@ -1,8 +1,9 @@
 $( document ).ready( function(){
 
-  $(".button-collapse").sideNav({
+  $( '.button-collapse' ).sideNav({
     closeOnClick: true,
     edge: 'right'
   });
 
+  $( '.parallax' ).parallax();
 })

@@ -1,9 +1,8 @@
 <div class="container">
-	<%if @manufacturers%>
-  	<%@manufacturers.each do |manufacturer|%>
-  		<span>><%= manufacturer.name%> </span>
-  		<span>><%= manufacturer.profile%> </span>
-		<%end%>
-	<%end%>	
+	<% if @manufacturers %>
+  	<% @manufacturers.each do |manufacturer| %>
+  		<span>><%= manufacturer.name %> </span>
+  		<span>><%= manufacturer.profile %> </span>
+		<% end %>
+	<% end %>
 </div>
-
