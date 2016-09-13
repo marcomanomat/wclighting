@@ -10,20 +10,25 @@
   </head>
 
   <body>
-    <div class="navbar-fixed">
+    <div class="navbar-fixed z-depth-1">
      <nav>
-       <div class="nav-wrapper indigo">
-         <a href="/" class="brand-logo yellow-text text-darken-2">West Coast Lighting</a>
-         <a href="#" data-activates="mobile-demo" class="right button-collapse yellow-text text-darken-2"><i class="material-icons">menu</i></a>
+       <div class="nav-wrapper indigo lighten-1">
+         <a href="/" class="brand-logo indigo-text text-darken-4"><%= image_tag "WCLogo", style:'width:400px; height:auto' %></a>
+         <a href="#" data-activates="mobile-demo" class="right button-collapse yellow-text text-darken-3"><i class="material-icons">menu</i></a>
          <ul class="right hide-on-med-and-down">
-           <li><a href="#" class="yellow-text text-darken-2">Manufacturers</a></li>
-           <li><a href="#" class="yellow-text text-darken-2">About</a></li>
-           <li><a href="#" class="yellow-text text-darken-2">Team</a></li>
+           <li><a href="#" class="yellow-text text-darken-3">Manufacturers</a></li>
+           <li class="indigo-text text-darken-4">|</li>
+           <li><a href="#" class="yellow-text text-darken-3">About</a></li>
+           <li class="indigo-text text-darken-4">|</li>
+           <li><a href="#" class="yellow-text text-darken-3">Team</a></li>
          </ul>
-         <ul class="side-nav indigo lighten-1" id="mobile-demo">
-           <li><a href="#" class="yellow-text text-darken-2">Manufacturers</a></li>
-           <li><a href="#" class="yellow-text text-darken-2">About</a></li>
-           <li><a href="#" class="yellow-text text-darken-2">Team</a></li>
+         <ul class="side-nav indigo lighten-1 z-depth-2" id="mobile-demo">
+           <li><a href="#" class="yellow-text text-darken-4">Manufacturers</a></li>
+           <li class="divider indigo darken-4"></li>
+           <li><a href="#" class="yellow-text text-darken-4">About</a></li>
+           <li class="divider indigo darken-4"></li>
+           <li><a href="#" class="yellow-text text-darken-4">Team</a></li>
+           <li class="divider indigo darken-4"></li>
          </ul>
        </div>
      </nav>
