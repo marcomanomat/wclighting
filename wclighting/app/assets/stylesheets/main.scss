@@ -6,6 +6,7 @@
 // Deep Lemon:          #FFC423
 
 html {
+  @extend .indigo-text, .text-darken-4;
   font-family: 'Fjalla One', sans-serif;
 }
 
