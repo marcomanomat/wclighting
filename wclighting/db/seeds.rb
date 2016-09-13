@@ -10,12 +10,11 @@ product_types = ProductType.create!([
                                      { name: "Thing1" },
                                      { name: "Thing2" },
                                      { name: "Thing3" }])
-manufacturers = Manufacturer.create!([
-                                     { name: "Manu1", profile: "We make things", website: "www.manu1.com" },
-                                     { name: "Manu2", profile: "We make things", website: "www.manu2.com" },
-                                     { name: "Manu3", profile: "We make things", website: "www.manu3.com" },
-                                     { name: "Manu4", profile: "We make things", website: "www.manu4.com" },
-                                     { name: "Manu5", profile: "We make things", website: "www.manu5.com" }])
+50.times do |num|
+  Manufacturer.create!(name: "Manu#{num}",
+                       profile: "Mauris malesuada condimentum turpis eget finibus. Sed lobortis egestas posuere. Etiam efficitur condimentum consequat. Pellentesque enim risus, tincidunt nec efficitur eu, condimentum ut lorem. Duis sit amet ante ultrices, ornare mi at, pretium augue. Curabitur finibus dolor dui, ornare pretium nibh molestie sit amet. Nulla sed molestie sapien. In vel placerat metus.",
+                       website: "www.manu#{num}.com")
+end
 
 thing1 = ProductType.find(1)
 thing2 = ProductType.find(2)
