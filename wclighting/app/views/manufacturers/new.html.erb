@@ -1,0 +1,22 @@
+<div class="container">
+
+<div class="row text-container">
+  <div class="col-sm-6">
+  <%=form_for Manufacturer.new do |c| %>
+    Name:<br> <%= c.text_field(:name) %><br>
+    Profile:<br> <%= c.text_area(:profile) %><br>
+    Website:<br><%=c.text_field(:website) %><br>
+  </div>
+
+  <div class="col-sm-6">
+
+    Image:<%= c.file_field :img %><br>
+
+  </div>
+
+
+<br><br><br><br><%= c.submit "Add Manufacturer" %><br><br><br><br>
+  <%end%>
+</div>
+
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+
+<div class="row text-container">
+  <div class="col-sm-6">
+  <%=form_for(@manufacturer) do |c| %>
+    Name:<br> <%= c.text_field :name, placeholder: @manufacturer.name %><br>
+    Profile:<br> <%= c.text_area :profile, placeholder: @manufacturer.profile %><br>
+    Website:<br><%=c.text_field :website, placeholder: @manufacturer.website %><br>
+  </div>
+
+  <div class="col-sm-6">
+
+    Image:<%= c.file_field :img %><br>
+
+  </div>
+
+
+<br><br><br><br><%= c.submit "Edit Manufacturer" %><br><br><br><br>
+  <%end%>
+</div>
+
+</div>
