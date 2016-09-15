@@ -1,4 +1,6 @@
 class Company < ApplicationRecord
+	has_many :images
+	
 	validates :name, :phone, :title, :address, :email, presence: true
 
   validates_attachment_content_type :img,
