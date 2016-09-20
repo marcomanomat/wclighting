@@ -3,27 +3,79 @@
   </div>
 </div>
 <div class="container">
-  <h2 class="center">Featured Manufacturers</h2>
-  <% if @manufacturers %>
-    <div class="row">
-        <% @manufacturers.each do |manufacturer| %>
-          <div class="col s12 m6 l6">
-            <div class="card center indigo lighten-2 hoverable">
-              <div class="card-content indigo lighten-2">
-                <span class="card-title "><%= manufacturer.name %></span>
-                <div class="carousel carousel-slider">
-                  <a class="carousel-item" href="#one!"><img src="http://lorempixel.com/900/900/city/1"></a>
-                  <a class="carousel-item" href="#two!"><img src="http://lorempixel.com/900/900/city/2"></a>
-                  <a class="carousel-item" href="#three!"><img src="http://lorempixel.com/900/900/city/3"></a>
-                </div>
-                <p><%= manufacturer.profile %></p>
+  <h2 class="center">Featured</h2>
+  <div class="yellow-underline"></div>
+    <div class="feat-cards">
+      <div class="feat-row-1">
+        <div class="row">
+          <div class="col s6">
+            <div class="card">
+              <div class="card-image">
+                <%= image_tag('featured1', class: "responsive-img")%>
+                <span class="card-title">Comcast Center</span>
+              </div>
+              <div class="card-content">
+                <p>The 58-story, 974 ft. Comcast Center tower is the tallest building in Philadelphia. </p>
               </div>
               <div class="card-action">
-                <a href="<%= manufacturer.website %>"><%= manufacturer.website %></a>
+                <a href="http://www.i2systems.com/">Comcast Center</a>
               </div>
             </div>
           </div>
-        <% end %>
-      </div>
-    <% end %>
-</div>
+          <div class="col s6">
+            <div class="card">
+              <div class="card-image">
+                <%= image_tag('featured2', class: "responsive-img")%>
+                <span class="card-title">Health First</span>
+              </div>
+              <div class="card-content">
+                <p>Health First is a not-for-profit community health system located in Brevard County, Florida.</p>
+              </div>
+              <div class="card-action">
+                <a href="http://www.i2systems.com/">Health First</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+       </div>
+       
+       <div class="feat-row-2"> 
+        <div class="row">
+          <div class="col s6">
+            <div class="card">
+              <div class="card-image">
+                <%= image_tag('featured3', class: "responsive-img")%>
+                <span class="card-title">High Line (NYC)</span>
+              </div>
+              <div class="card-content">
+                <p>The High Line is a 1.45-mile-long linear park built in Manhattan on an elevated section of a disused New York Central Railroad spur called the West Side Line.</p>
+              </div>
+              <div class="card-action">
+                <a href="http://www.i2systems.com/">High Line</a>
+              </div>
+            </div>
+          </div>
+          <div class="col s6">
+            <div class="card">
+              <div class="card-image">
+                <%= image_tag('featured4', class: "responsive-img")%>
+                <span class="card-title">Venetian Macau</span>
+              </div>
+              <div class="card-content">
+                <p>The Venetian Macao is a luxury hotel and casino resort owned by the American Las Vegas Sands company. The Venetian is a 39-story casino hotel on the Cotai Strip in Macau. </p>
+              </div>
+              <div class="card-action">
+                <a href="http://www.i2systems.com/">Venetian Macau</a>
+              </div>
+            </div>
+          </div>
+        </div>
+       </div>
+
+    </div>  
+  </div>  
+
+
+
+
