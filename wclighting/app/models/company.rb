@@ -1,5 +1,7 @@
 class Company < ApplicationRecord
 	has_many :images
+
+	has_attached_file :img
 	
 	validates :name, :phone, :title, :address, :email, presence: true
 
