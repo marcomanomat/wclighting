@@ -9,7 +9,7 @@ class ManufacturersController < ApplicationController
 	end
 
 	def create
-		@manufacturer =  Manufacturer.new(manufactuer_params)
+		@manufacturer =  Manufacturer.new(manufacturer_params)
 		@manufacturer.save
     if @manufacturer.save
       redirect_to "/manufacturers"
@@ -21,11 +21,11 @@ class ManufacturersController < ApplicationController
 
 	def edit
 		@manufacturer = Manufacturer.find(params[:id])
-	end	
+	end
 
   def update
   	@manufacturer = Manufacturer.find(params[:id])
-    @manufacturer.update_attributes(manufactuer_params)
+    @manufacturer.update_attributes(manufacturer_params)
     redirect_to "/manufacturers"
   end
 
@@ -33,12 +33,12 @@ class ManufacturersController < ApplicationController
   	@manufacturer = Manufacturer.find(params[:id])
     @manufacturer.destroy
     redirect_to "/manufacturers"
-  end	
+  end
 
 
 	private
 
- def manufactuer_params
+ def manufacturer_params
     params.require(:manufacturer).permit(:name, :profile, :website, :img)
-  end	
+  end
 end
