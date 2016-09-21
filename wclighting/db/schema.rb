@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160915001055) do
+ActiveRecord::Schema.define(version: 20160921183219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,13 +40,17 @@ ActiveRecord::Schema.define(version: 20160915001055) do
   end
 
   create_table "employees", force: :cascade do |t|
-    t.string   "first_name", limit: 50,  null: false
-    t.string   "last_name",  limit: 50,  null: false
-    t.string   "title",      limit: 128, null: false
-    t.text     "email",                  null: false
-    t.string   "phone",      limit: 10,  null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "first_name",       limit: 50,  null: false
+    t.string   "last_name",        limit: 50,  null: false
+    t.string   "title",            limit: 128, null: false
+    t.text     "email",                        null: false
+    t.string   "phone",            limit: 10,  null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "img_file_name"
+    t.string   "img_content_type"
+    t.integer  "img_file_size"
+    t.datetime "img_updated_at"
     t.index ["email"], name: "index_employees_on_email", unique: true, using: :btree
   end
 
