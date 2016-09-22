@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
 	resources :static_pages, only: :index
 	resources :manufacturers
+	resources :employees
   devise_for :admins
 
   get '/manufacturers' => 'manufacturers#index'
@@ -11,6 +12,10 @@ Rails.application.routes.draw do
   get '/manufacturers/edit' => 'manufacturers#edit'  
   post '/manufacturers/edit' => 'manufacturers#update'
 
-
+  get '/employees' => 'employees#index'
+  get '/employees/new' => 'employees#new'
+  post '/employees/new' => 'employees#create'
+  get '/employees/edit' => 'employees#edit'  
+  post '/employees/edit' => 'employees#update'
 
 end
