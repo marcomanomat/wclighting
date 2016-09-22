@@ -2,7 +2,7 @@ class Manufacturer < ApplicationRecord
 	# attr_accessor :img_file_name
 	# include PgSearch
 	# multisearchable :against => [:]
-	has_many :images
+	has_many :manufacturer_images
 	has_and_belongs_to_many :product_types
 
 	validates :name, :profile, :website, presence: true

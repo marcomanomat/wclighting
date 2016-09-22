@@ -1,0 +1,2 @@
+class CompanyImage < ApplicationRecord
+end

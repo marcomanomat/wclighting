@@ -1,5 +1,5 @@
 class Company < ApplicationRecord
-	has_many :images
+	has_many :company_images
 
 	has_attached_file :img
 	
