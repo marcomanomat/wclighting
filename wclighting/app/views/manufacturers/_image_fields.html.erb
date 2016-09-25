@@ -1,0 +1,8 @@
+<div class="nested-fields" style="padding-bottom: 10px;">
+
+  <div class="field">
+    <%= f.label :img, "Image(s)"%>
+    <%= f.file_field :img, :required => true %>
+  </div>
+  <%= link_to_remove_association "Remove this Image", f %>
+</div>

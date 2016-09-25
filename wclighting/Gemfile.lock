@@ -56,6 +56,7 @@ GEM
       activesupport (>= 3.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
+    cocoon (1.2.9)
     coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
@@ -103,7 +104,6 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.9.0)
     multi_json (1.12.1)
-    nested_form (0.3.2)
     nio4r (1.2.1)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
@@ -207,14 +207,14 @@ DEPENDENCIES
   aws-sdk
   better_errors
   byebug
+  cocoon
   coffee-rails (~> 4.2)
   devise
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
   materialize-sass
-  nested_form
-  paperclip
+  paperclip (~> 5.1.0)
   pg (~> 0.18)
   pg_search
   pry-byebug

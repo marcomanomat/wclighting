@@ -2,15 +2,17 @@ Rails.application.routes.draw do
 	root 'construction#index'
 
 	resources :static_pages, only: :index
-	resources :manufacturers
+	resources :manufacturers do 
+    resources :images
+  end
 	resources :employees
   devise_for :admins
 
-  get '/manufacturers' => 'manufacturers#index'
-  get '/manufacturers/new' => 'manufacturers#new'
-  post '/manufacturers/new' => 'manufacturers#create'
-  get '/manufacturers/edit' => 'manufacturers#edit'  
-  post '/manufacturers/edit' => 'manufacturers#update'
+  # get '/manufacturers' => 'manufacturers#index'
+  # get '/manufacturers/new' => 'manufacturers#new'
+  # post '/manufacturers/new' => 'manufacturers#create'
+  # get '/manufacturers/edit' => 'manufacturers#edit'  
+  # post '/manufacturers/edit' => 'manufacturers#update'
 
   get '/employees' => 'employees#index'
   get '/employees/new' => 'employees#new'
