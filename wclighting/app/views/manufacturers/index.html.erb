@@ -8,7 +8,7 @@
 					<div class="card center indigo lighten-2 hoverable">
 							<div class="card-content indigo lighten-2">
 								<span class="card-title "><%= manufacturer.name %></span>
-								<a class="modal-trigger waves-effect waves-light" href="#modal<%= manufacturer.id %>"><img src="http://lorempixel.com/900/900/business/"></a>
+								<a class="modal-trigger waves-effect waves-light" href="#modal<%= manufacturer.id %>"><%= image_tag manufacturer.logo %></a>
 							</div>
 							<div class="card-action">
 								<a href="<%= manufacturer.website %>"><%= manufacturer.website %></a>

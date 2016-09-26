@@ -1,4 +1,4 @@
-class AddAttachmentImgToManufacturers < ActiveRecord::Migration
+class AddAttachmentLogoToManufacturers < ActiveRecord::Migration
   def self.up
     change_table :manufacturers do |t|
       t.attachment :logo
