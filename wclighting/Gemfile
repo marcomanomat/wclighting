@@ -1,8 +1,12 @@
 source 'https://rubygems.org'
 
+
+gem 'rmagick', '~> 2.16.0'
+gem 'cocoon'
+# gem 'nested_form_fields'
 gem 'pg_search'
 gem 'devise'
-gem 'paperclip'
+gem 'paperclip', "~> 5.1.0"
 gem 'aws-sdk'
 gem 'materialize-sass'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'

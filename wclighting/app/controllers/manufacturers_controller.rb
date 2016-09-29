@@ -8,14 +8,17 @@ class ManufacturersController < ApplicationController
 		@manufacturer = Manufacturer.find(params[:id])
 	end
 
+  def new
+    @manufacturer = Manufacturer.new
+  end
+
 	def create
 		@manufacturer =  Manufacturer.new(manufacturer_params)
 		@manufacturer.save
     if @manufacturer.save
       redirect_to "/manufacturers"
     else
-      redirect_to "/",
-      alert: "Sorry! Something went wrong. Please check that you've filled out all required information."
+      render action: :new
     end
 	end
 
@@ -39,6 +42,8 @@ class ManufacturersController < ApplicationController
 	private
 
  def manufacturer_params
-    params.require(:manufacturer).permit(:name, :profile, :website, :img)
+    params.require(:manufacturer).permit(:name, :profile, :website, :logo, images_attributes:[:id, :img, :destroy])
   end
+
+
 end
