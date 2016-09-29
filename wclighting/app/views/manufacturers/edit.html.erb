@@ -1,5 +1,5 @@
 
-<%= form_for @manufacturer do |f| %>
+<%= form_for @manufacturer, :html => { :multipart => true } do |f| %>
   <div class="col-sm-6">
     <br><br>
     <%= f.label :name, "Manufacturer's Name:"%>
@@ -26,22 +26,26 @@
         <%= link_to_add_association 'Add Another Image', f, :images %>
       </div>
     <% end %>
+  </div><br>
 
-     <p>
-    <%= f.label :image %><br>
-    <%@manufacturer.images.each do |i|%>
-      <%= image_tag(i.img.url(:thumb)) %>
-      <%= check_box_tag(i.img.url(:delete_image))%>
-
-
-      <%end%>  
-
-  </p>    
-
-  </div>
   <%= f.submit 'Edit Manufacturer'%>
   <% @manufacturer.errors.full_messages.each do |msg| %>
   <li>Error:  <%= msg %>.</li>
   </div>
 <% end %>
+
+  <div>
+    <br>Manufacturer Image(s):<br>
+    <%@manufacturer.images.each do |image|%>
+    <%=fields_for image do |image_fields| %>
+    <%= image_tag image.img.url(:small) %>
+    <%= link_to 'Delete', manufacturer_image_path(@manufacturer, image), :confirm=> 'Are you sure?', :method=> :delete %>
+    <br>
+
+
+        <%end%>  
+      <%end%>  
+
+  </div>    
+
 <% end %>
