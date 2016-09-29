@@ -1,14 +1,40 @@
-<% content_for(:page) { "maintenance" } %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>West Coast Lighting</title>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'favicon.ico' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-<div class="logo-space center">
-	<%= image_tag "Logo.png" %>
-	<span id="message">
-		<p>New Website Coming Soon</p>
-	</span>
-</div>
+  <body>
 
-<section id="contact-info">
-  <p>(239) 390-1004</p>
-  <p><a href="mailto:quotes@wcltg.com">quotes@wcltg.com </a></p>
-  <p>25241 Elementary Way Suite 103. Bonita Springs, FL 34135</p>
-</section>
+   <div class="side-nav fixed indigo lighten-5 z-depth-2" style="text-align:center;" id="mobile-demo">
+    <%= image_tag "Logo", style:'width:auto; height:270px' %>
+      <div id="nav-links">
+         <ul><a href="#" class="indigo-text text-darken-4">About</a></li>
+        <ul><a href="#" class="indigo-text text-darken-4">Fixtures</a></li>
+         <ul><a href="#" class="indigo-text text-darken-4">Manufacturers</a></li>
+         <ul><a href="#" class="indigo-text text-darken-4">Our Team</a></li>
+      </div>  
+
+      <footer class="footer indigo lighten-5 ">
+      <div class="contacts indigo-text text-lighten-4">
+       <a class="email amber-text text-lighten-2" href="mailto:quotes@wcltg.com">QUOTES@WCLTG.COM </a>      239.390.1004   |   25241 ELEMENTARY WAY, SUITE 103. <br>BONITA SPRINGS, FL 34135
+      </div>
+
+      </footer>
+
+    </div>
+
+    <div class="parallax-container">
+    	<h1>- NEW WEBSITE COMING SOON -</h1>
+  		<div class="parallax"><%= image_tag "CancerCenter" %>
+  		</div>
+		</div>
+
+  </body>
+
+</html>
