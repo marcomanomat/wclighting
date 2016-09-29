@@ -10,38 +10,25 @@
   </head>
 
   <body>
-    <div class="navbar-fixed z-depth-1">
-     <nav>
-       <div class="nav-wrapper indigo lighten-5">
-         <a href="/" class="brand-logo indigo-text text-darken-4 hide-on-small-only"><%= image_tag "WCLogo", style:'width:400px; height:auto' %></a>
-         <a href="/" class="brand-logo indigo-text text-darken-4 hide-on-med-and-up"><%= image_tag "WCLogoS", style:'width:auto; height:55px' %></a>
-         <a href="#" data-activates="mobile-demo" class="right button-collapse yellow-text text-darken-3"><i class="material-icons">menu</i></a>
-         <ul class="right hide-on-med-and-down">
-           <li><a href="<%= manufacturers_path %>" class="indigo-text text-darken-4 ">Manufacturers</a></li>
-           <li class="yellow-text text-darken-1">|</li>
-           <li><a href="#" class="indigo-text text-darken-4 ">About</a></li>
-           <li class="yellow-text text-darken-1">|</li>
-           <li><a href="#" class="indigo-text text-darken-4 ">Team</a></li>
-         </ul>
-         <ul class="side-nav indigo lighten-1 z-depth-2" id="mobile-demo">
-           <li><a href="<%= manufacturers_path %>" class="yellow-text text-darken-5">Manufacturers</a></li>
-           <li class="divider indigo darken-4"></li>
-           <li><a href="#" class="yellow-text text-darken-1">About</a></li>
-           <li class="divider indigo darken-4"></li>
-           <li><a href="<%= employees_path %>" class="yellow-text text-darken-1">Team</a></li>
-           <li class="divider indigo darken-4"></li>
-         </ul>
-       </div>
-     </nav>
+
+   <div class="side-nav fixed indigo lighten-5 z-depth-2" style="text-align:center;" id="mobile-demo">
+    <%= image_tag "Logo", style:'width:auto; height:270px' %>
+      <div id="nav-links">
+         <ul><a href="#" class="indigo-text text-darken-4">About</a></li>
+        <ul><a href="#" class="indigo-text text-darken-4">Fixtures</a></li>
+         <ul><a href="<%= manufacturers_path %>" class="indigo-text text-darken-4">Manufacturers</a></li>
+         <ul><a href="<%= employees_path %>" class="indigo-text text-darken-4">Our Team</a></li>
+      </div>  
+
+      <footer class="footer indigo lighten-5 ">
+      <div class="contacts indigo-text text-lighten-2">
+       <a class="email amber-text text-lighten-2" href="mailto:quotes@wcltg.com">QUOTES@WCLTG.COM </a>      239.390.1004   |   25241 ELEMENTARY WAY, SUITE 103. <br>BONITA SPRINGS, FL 34135
+      </div>
+
+      </footer>
+
     </div>
     <%= yield %>
   </body>
 </html>
 
-<footer class="page-footer indigo darken-4">
-
-      <div class="contacts text-#FFC423">
-       <a class="email" href="mailto:quotes@wcltg.com">QUOTES@WCLTG.COM </a>   |   239.390.1004   |   25241 ELEMENTARY WAY, SUITE 103. BONITA SPRINGS, FL 34135
-      </div>
-
-</footer>
