@@ -10,6 +10,40 @@
   </head>
 
   <body>
+<div class="navbar-fixed z-depth-1 hide-on-large-only">
+     <nav>
+       <div class="nav-wrapper indigo lighten-5 ">
+         <a href="/" class="brand-logo indigo-text text-darken-4 hide-on-large-only hide-on-small-only"><%= image_tag "WCLogo", style:'width:400px; height:auto' %></a>
+         <a href="/" class="brand-logo indigo-text text-darken-4 hide-on-med-and-up"><%= image_tag "WCLogoS", style:'width:auto; height:55px' %></a>
+         <a href="#" data-activates="mobile-demo" class="right button-collapse yellow-text text-darken-3"><i class="material-icons">menu</i></a>
+         <ul class="right hide-on-med-and-down" style='width: auto !important;'>
+    <%= image_tag "Logo", style:'width:auto; height:290px' %>
+      <div id="nav-links">
+         <ul><a href="#" class="indigo-text text-darken-4">About</a></li>
+        <ul><a href="#" class="indigo-text text-darken-4">Fixtures</a></li>
+         <ul><a href="#" class="indigo-text text-darken-4">Manufacturers</a></li>
+         <ul><a href="#" class="indigo-text text-darken-4">Our Team</a></li>
+      </div> 
+      </div> 
+         <ul class="side-nav indigo lighten-5 z-depth-2" id="mobile-demo" style:'width: auto !important;'>
+    <%= image_tag "Logo", style:'width:auto; height:290px' %>
+      <div id="nav-links">
+         <ul><a href="#" class="indigo-text text-darken-4">About</a></li>
+        <ul><a href="#" class="indigo-text text-darken-4">Fixtures</a></li>
+         <ul><a href="#" class="indigo-text text-darken-4">Manufacturers</a></li>
+         <ul><a href="#" class="indigo-text text-darken-4">Our Team</a></li>
+      </div> 
+
+      <footer class="footer indigo lighten-5 ">
+      <div class="contacts indigo-text text-lighten-4">
+       <a class="email amber-text text-lighten-2" href="mailto:quotes@wcltg.com">QUOTES@WCLTG.COM </a>      239.390.1004   |   25241 ELEMENTARY WAY, SUITE 103. BONITA SPRINGS, FL 34135
+      </div>
+      </footer>
+
+         </ul>
+       </div>
+     </nav>
+    </div>
 
    <div class="side-nav fixed indigo lighten-5 z-depth-2" style="text-align:center;" id="mobile-demo">
     <%= image_tag "Logo", style:'width:auto; height:290px' %>
@@ -18,19 +52,18 @@
         <ul><a href="#" class="indigo-text text-darken-4">Fixtures</a></li>
          <ul><a href="#" class="indigo-text text-darken-4">Manufacturers</a></li>
          <ul><a href="#" class="indigo-text text-darken-4">Our Team</a></li>
-      </div>  
+      </div> 
 
       <footer class="footer indigo lighten-5 ">
       <div class="contacts indigo-text text-lighten-4">
        <a class="email amber-text text-lighten-2" href="mailto:quotes@wcltg.com">QUOTES@WCLTG.COM </a>      239.390.1004   |   25241 ELEMENTARY WAY, SUITE 103. <br>BONITA SPRINGS, FL 34135
       </div>
-
       </footer>
 
     </div>
 
     <div class="parallax-construction-container">
-    	<h1>- NEW WEBSITE COMING SOON -</h1>
+    	<h1>NEW WEBSITE COMING SOON</h1>
   		<div class="parallax"><%= image_tag "CancerCenter" %>
   		</div>
 		</div>

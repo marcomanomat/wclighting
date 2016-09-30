@@ -5,6 +5,36 @@
 // Gainsboro:           #D8DFE7
 // Deep Lemon:          #FFC423
 
+
+// under-construction
+.parallax-construction-container {
+  height: 730px;
+    .parallax {
+    filter: brightness(30%);
+      min-height: 100%;
+  min-width: 1024px;
+  
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+    
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+    }
+
+}
+    h1 {
+     position: relative; 
+     top: 200px; 
+     left: 0; 
+     width: 100%; 
+     color: white;
+     text-align: center;
+     text-shadow: 5px 5px #10155E;
+    }
+
 html {
   @extend .indigo-text, .text-darken-4;
   font-family: 'Fjalla One', sans-serif;
@@ -13,7 +43,6 @@ html {
 
 body {
   @extend .amber, .lighten-4;
-
  }
 
 .side-nav {
@@ -34,21 +63,6 @@ body {
   height: 730px;
 }
 
-.parallax-construction-container {
-  height: 730px;
-    .parallax {
-    filter: brightness(30%);
-    }
-    h1 {
-     position: relative; 
-     top: 200px; 
-     left: 0; 
-     width: 100%; 
-     color: white;
-     text-align: center;
-     text-shadow: 5px 5px #10155E;
-    }
-}
 
 .card {  
   img {
