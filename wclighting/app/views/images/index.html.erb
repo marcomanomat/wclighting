@@ -1,0 +1,41 @@
+
+<%= form_for @manufacturer, :html => { :multipart => true } do |f| %>
+  <div class="col-sm-6">
+
+
+  <br><br>
+  <div id="images"> 
+    <%= f.fields_for :images, Image.new do |i| %>
+        <div class="field">
+    <%= i.label :img, "Image(s)"%>
+    <%= i.file_field :img%>
+  </div>
+  <%= link_to_remove_association "Remove this Image", i %>
+</div>
+      <div class="add_image">
+
+      </div>
+    <% end %>
+  </div><br>
+
+  <%= f.submit 'Finished'%>
+  <% @manufacturer.errors.full_messages.each do |msg| %>
+  <li>Error:  <%= msg %>.</li>
+  </div>
+<% end %>
+
+  <div>
+    <br>Manufacturer Image(s):<br>
+    <%@manufacturer.images.each do |image|%>
+    <%=fields_for image do |image_fields| %>
+    <%= image_tag image.img.url(:small) %>
+    <%= link_to 'Delete', manufacturer_image_path(@manufacturer, image), :confirm=> 'Are you sure?', :method=> :delete %>
+    <br>
+
+
+        <%end%>  
+      <%end%>  
+
+  </div>    
+
+<% end %>

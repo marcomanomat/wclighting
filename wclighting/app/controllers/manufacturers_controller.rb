@@ -1,4 +1,5 @@
 class ManufacturersController < ApplicationController
+# before_filter :authenticate_admin!, only: [:new, :edit, :destroy]
 
 	def index
 		@manufacturers = Manufacturer.all
@@ -15,6 +16,7 @@ class ManufacturersController < ApplicationController
 	def create
 		@manufacturer =  Manufacturer.new(manufacturer_params)
 		@manufacturer.save
+    # binding.pry
     if @manufacturer.save
       redirect_to "/manufacturers"
     else
@@ -28,7 +30,9 @@ class ManufacturersController < ApplicationController
 
   def update
   	@manufacturer = Manufacturer.find(params[:id])
-    @manufacturer.update_attributes(manufacturer_params)
+    # binding.pry
+    @manufacturer.update_attributes!(manufacturer_params)
+    # binding.pry
     redirect_to "/manufacturers"
   end
 

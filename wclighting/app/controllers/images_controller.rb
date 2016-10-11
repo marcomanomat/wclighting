@@ -1,9 +1,15 @@
 class ImagesController < ApplicationController
 
+  def index
+    # binding.pry
+    @manufacturer = Manufacturer.find(params[:manufacturer_id])
+    @images = @manufacturer.images.all
+  end
 
 	def show
 		@image = Image.find(params[:id])
 	end
+
 
 	def edit
 		@image = Image.find(params[:id])

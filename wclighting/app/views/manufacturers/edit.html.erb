@@ -1,4 +1,3 @@
-
 <%= form_for @manufacturer, :html => { :multipart => true } do |f| %>
   <div class="col-sm-6">
     <br><br>
@@ -15,37 +14,11 @@
   <div class="col-sm-6">
     
   <%= f.label :logo, "Logo"%>
-  <%= f.file_field:logo %>
+  <%= f.file_field:logo %><br>
+  <%=f.submit %>
 
-
-  <br><br>
-  <div id="images"> 
-    <%= f.fields_for :images, Image.new do |i| %>
-      <%= render 'image_fields', :f => i %>
-      <div class="add_image">
-        <%= link_to_add_association 'Add Another Image', f, :images %>
-      </div>
-    <% end %>
-  </div><br>
-
-  <%= f.submit 'Edit Manufacturer'%>
-  <% @manufacturer.errors.full_messages.each do |msg| %>
-  <li>Error:  <%= msg %>.</li>
-  </div>
-<% end %>
-
-  <div>
-    <br>Manufacturer Image(s):<br>
-    <%@manufacturer.images.each do |image|%>
-    <%=fields_for image do |image_fields| %>
-    <%= image_tag image.img.url(:small) %>
-    <%= link_to 'Delete', manufacturer_image_path(@manufacturer, image), :confirm=> 'Are you sure?', :method=> :delete %>
-    <br>
-
-
-        <%end%>  
-      <%end%>  
-
+<br>
+<%= link_to 'Edit Photos', manufacturer_images_path(@manufacturer) %>
   </div>    
 
 <% end %>
