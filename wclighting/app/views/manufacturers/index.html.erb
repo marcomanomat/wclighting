@@ -9,24 +9,34 @@
 	<% if @manufacturers %>
     <div class="row">
         <% @manufacturers.each do |manufacturer| %>          
-
           <div class="col s6 m4 l3">
             <div class="card card-manu">
               <div class="card-image image-manu">
                 <a class="modal-trigger waves-effect waves-light" href="#modal<%= manufacturer.id %>"><%= image_tag( manufacturer.logo, class: "manu-img") %></a>
- 
               </div>
-
               <div class="card-action site-manu">
                 <a href="<%= manufacturer.website %>"><%= manufacturer.name %></a>
               </div>
             </div>
           </div>
+
 					<div id="modal<%= manufacturer.id %>" class="modal modal-fixed-footer">
 						<div class="modal-content">
 							<h4><%= manufacturer.name %></h4>
 							<p><%= manufacturer.profile %></p>
+
+  <div class="slider">
+    <ul class="slides">
+    	<% manufacturer.images.each do |image| %>	
+      <li>
+      	<%= image_tag(image.img_file_name)%>
+      </li>  
+
+    <%end%> 
+  </div>       	 						  
+
 						</div>
+
 						<div class="modal-footer">
 							<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
 							<% if admin_signed_in? %>

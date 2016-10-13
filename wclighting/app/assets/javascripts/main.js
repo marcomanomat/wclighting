@@ -7,7 +7,10 @@ $( document ).ready( function(){
 
   $( '.parallax' ).parallax();
 
-  $('.carousel.carousel-slider').carousel({full_width: true});
+$('.slider').slider({full_width: false});
+$('.slider').slider('next');
+
+  $('.carousel').carousel();
 
   $('.modal-trigger').leanModal();
 
