@@ -54,6 +54,29 @@ body {
   margin-bottom: 1.50cm;
 }
 
+//maufacturer stuff
+
+  .card-manu {
+    width:190px;
+    height:190px;
+  }
+
+  .image-manu {
+text-align: center;
+height: 65%;
+position: absolute;
+  }
+
+  .site-manu {
+text-align: center;
+margin: 0;
+padding: 0;
+
+  }
+
+#font-color {
+  color: #FFC423
+}
 
 @media (min-width: 992px) {
     body {
