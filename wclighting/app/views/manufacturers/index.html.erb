@@ -22,19 +22,19 @@
 
 					<div id="modal<%= manufacturer.id %>" class="modal modal-fixed-footer">
 						<div class="modal-content">
-							<h4><%= manufacturer.name %></h4>
-							<p><%= manufacturer.profile %></p>
 
-  <div class="slider">
-    <ul class="slides">
-    	<% manufacturer.images.each do |image| %>	
-      <li>
-      	<%= image_tag(image.img_file_name)%>
-      </li>  
-
-    <%end%> 
-  </div>       	 						  
-
+							<div id="profile">
+								<%= image_tag( manufacturer.logo, class: "manu-logo") %>
+								<p style="float:right;"><%= manufacturer.profile %></p>
+							</div>
+						  <div class="slider">
+						    <ul class="slides">
+						    	<% manufacturer.images.each do |image| %>	
+						      <li>
+						      	<%= image_tag(image.img_file_name)%>
+						      </li>  
+						    <%end%> 
+						  </div>       						  
 						</div>
 
 						<div class="modal-footer">
