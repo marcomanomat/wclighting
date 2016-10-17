@@ -1,12 +1,12 @@
       <p> Fixtures </p>
 
-<form class="filter_form", method="get">
-  <%= collection_check_boxes(:product_type, :product_type_ids, ProductType.all, :id, :name) %>
+<form class="filter_form", method="get"><div>
+  <%= collection_radio_buttons(:product_type, :product_type_ids, ProductType.all, :id, :name) %></div>
   <input type="submit" name="commit">
-	</div>
+	
 </form>
 
 <% @manufacturers.each do |m| %>
-<%= m.name %>
+	
+<div><%= m.name %><div>
 <%end%>
- 

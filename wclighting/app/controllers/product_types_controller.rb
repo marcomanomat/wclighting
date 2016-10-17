@@ -3,22 +3,22 @@ class ProductTypesController < ApplicationController
   def index
     # binding.pry
     # @manufacturer = Manufacturer.find(params[:manufacturer_id])
-    @product_types = ProductType.all
-    @collection = []
-    @collection << ProductType.where(id: params[:product_type][:product_type_ids].reject { |e| e.empty?})
-    # binding.pry
-    @collection = @collection.flatten
-# binding.pry
-    @manufacturers = []
-    # binding.pry
-    @collection.each do |pt|
-    		# binding.pry
-    	@manufacturers << pt.manufacturers 
-    	@manufacturers = @manufacturers.flatten
-    end
+    # @product_types = ProductType.all
+#     @collection = []
+#     # @collection << ProductType.where(id: params[:product_type][:product_type_ids])
+#     # binding.pry
+#     @collection = @collection.flatten
+# # binding.pry
+#     @mmanufacturers = []
+#     # binding.pry
+#     @collection.each do |pt|
+#     		binding.pry
+#     	@mmanufacturers << pt.manufacturers 
+#     	@mmanufacturers = @mmanufacturers.flatten.uniq
+    # end
 
 
-    @manufacturers
+    # @mmanufacturers
     # binding.pry
     # @filtered = ProductType.find(params[:id])
   end

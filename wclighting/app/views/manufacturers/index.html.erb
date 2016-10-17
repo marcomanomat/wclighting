@@ -1,3 +1,19 @@
+      <p> Fixtures </p>
+
+<form class="filter_form", method="get"><div>
+  <%= collection_radio_buttons(:product_type, :product_type_ids, ProductType.all, :id, :name) %></div>
+  <input type="submit" name="commit">
+</form>
+
+<% if @mmanufacturers%>
+		<% @mmanufacturers.each do |m| %>
+		<%= m.name %>
+		<%end%>
+		
+<%else%>
+		<%="list all!"%>
+<%end%>
+
 <div class="man container">
 	<h2 class="center">Manufacturers</h2>
 	<div class="yellow-underline"></div>
