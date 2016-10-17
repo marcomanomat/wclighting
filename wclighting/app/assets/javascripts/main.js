@@ -9,14 +9,14 @@ $( document ).ready( function(){
 
 $('.slider').slider({
 			full_width: false,
-			height: 450,
+			height: 500,
     }
   );			
 
   $('.carousel').carousel();
 
 $('.modal-trigger').leanModal({
-      starting_top: '100%',
+      starting_top: '1%',
       dismissible: true, // Modal can be dismissed by clicking outside of the modal
       opacity: .55, // Opacity of modal background
     }
