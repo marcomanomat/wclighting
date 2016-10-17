@@ -46,7 +46,7 @@ class ManufacturersController < ApplicationController
 	private
 
  def manufacturer_params
-    params.require(:manufacturer).permit(:name, :profile, :website, :logo, images_attributes:[:id, :img, :destroy])
+    params.require(:manufacturer).permit(:name, :profile, :website, :logo, images_attributes:[:id, :img, :destroy], product_type_ids: [])
   end
 
 

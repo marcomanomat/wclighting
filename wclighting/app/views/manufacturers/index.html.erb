@@ -38,7 +38,10 @@
 						</div>
 
 						<div class="modal-footer">
-							<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+							<a href="#!" class="modal-action modal-close waves-effect waves-blue btn-flat ">Close</a>
+							<% manufacturer.product_types.each do |p| %>	
+						      <p>	<%= p.name%> </p>
+						      	<%end%> 
 							<% if admin_signed_in? %>
 							<%= link_to 'Edit', edit_manufacturer_path(manufacturer), class: 'btn-flat' %>
 							<%= link_to 'Delete', manufacturer_path(manufacturer),
