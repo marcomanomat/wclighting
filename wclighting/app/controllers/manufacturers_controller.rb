@@ -14,12 +14,12 @@ class ManufacturersController < ApplicationController
     # binding.pry
     @collection = @collection.flatten
 # binding.pry
-    @mmanufacturers = []
+    @filtered_manufacturers = []
     # binding.pry
     @collection.each do |pt|
         # binding.pry
-      @mmanufacturers << pt.manufacturers 
-      @mmanufacturers = @mmanufacturers.flatten.uniq
+      @filtered_manufacturers << pt.manufacturers 
+      @filtered_manufacturers = @filtered_manufacturers.flatten.uniq
   	end
   end
 

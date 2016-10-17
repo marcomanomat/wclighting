@@ -5,13 +5,16 @@
   <input type="submit" name="commit">
 </form>
 
-<% if @mmanufacturers%>
-		<% @mmanufacturers.each do |m| %>
-		<%= m.name %>
+<% if @filtered_manufacturers%>
+		<% @filtered_manufacturers.each do |manufacturer| %>
+		<%= manufacturer.name %>
 		<%end%>
-		
+		<br><br><%= link_to "List All Manufacturers", manufacturers_path %>
 <%else%>
-		<%="list all!"%>
+
+
+
+
 <%end%>
 
 <div class="man container">
