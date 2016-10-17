@@ -1,0 +1,12 @@
+      <p> Fixtures </p>
+
+<form class="filter_form", method="get">
+  <%= collection_check_boxes(:product_type, :product_type_ids, ProductType.all, :id, :name) %>
+  <input type="submit" name="commit">
+	</div>
+</form>
+
+<% @manufacturers.each do |m| %>
+<%= m.name %>
+<%end%>
+ 
