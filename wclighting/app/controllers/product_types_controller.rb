@@ -5,7 +5,8 @@ class ProductTypesController < ApplicationController
     # @manufacturer = Manufacturer.find(params[:manufacturer_id])
     @product_types = ProductType.all
     @collection = []
-    @collection << ProductType.where("id =?",params[:product_type][:product_type_ids].reject { |e| e.empty?})
+    @collection << ProductType.where(id: params[:product_type][:product_type_ids].reject { |e| e.empty?})
+    # binding.pry
     @collection = @collection.flatten
 # binding.pry
     @manufacturers = []
