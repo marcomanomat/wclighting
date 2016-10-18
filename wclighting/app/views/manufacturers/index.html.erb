@@ -1,21 +1,44 @@
-<h4 class="center"> Fixtures </h4>
 
-<form class="filter_form", method="get"><div>
-  <%= collection_radio_buttons(:product_type, :product_type_ids, ProductType.all, :id, :name) %></div>
-  <input type="submit" name="commit">
-</form>
-<br><br><%= link_to "List All Manufacturers", manufacturers_path %>
+<div class="fixtures-section center">
+	<h5> Fixtures </h5>
+	<div class="yellow-underline-fixtures"></div>
+
+	<form class="filter_form", method="get">
+
+	<div class="fixture-buttons">
+  	<%= collection_radio_buttons(:product_type, :product_type_ids, ProductType.all, :id, :name) %>
+	</div>
+	
+	<div class="filter-button">
+		<button class="btn waves-effect waves-blue blue darken-4" type="submit" name="action">Filter
+    	<i class="material-icons left">add</i>
+  	</button>
+	</div>
+
+	</form>
+		<div class="list-all">
+			<%= link_to "List All Manufacturers", manufacturers_path %>
+		</div>
+		<hr>
+</div>
+
+
+
+
 
 <div class="man container">
 	<h2 class="center">Manufacturers</h2>
 	<div class="yellow-underline"></div>
 	<div>
 		<% if admin_signed_in? %>
+		<div class="add-new-manu">
 		<%= link_to 'Add New Manufacturer', new_manufacturer_path, class: 'link' %>
+		</div>
 		<% end %>
 	</div>
-</div>
+
 <% if @filtered_manufacturers%>
+			<h5><%=@selected_pt.name%> (<%= @filtered_manufacturers.count %>):</h5>
     <div class="row">
         <% @filtered_manufacturers.each do |manufacturer| %>          
           <div class="col s6 m4 l3">
@@ -109,7 +132,7 @@
 
         <% end %>
     </div>
-
+</div>
 </div>
 		<%end%>
 

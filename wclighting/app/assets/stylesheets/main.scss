@@ -11,6 +11,16 @@ html {
   min-width: 300px; 
 }
 
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 2.3px;
+}
+
 body {
   @extend .amber, .lighten-4;
 
@@ -46,12 +56,11 @@ body {
 }
 
 .yellow-underline {
-  width: 10%;
+  width: 15%;
   color: #f00;
   background-color: #FFC423;
   height: 5px;
-  margin: auto;
-  margin-bottom: 1.50cm;
+  margin-bottom: 2.25m;
 }
 
 // modal stuff
@@ -120,8 +129,12 @@ text-align: center;
 margin: 0;
 padding: 0;
 max-height: 50px;
-
   }
+
+.add-new-manu {
+  font-size: .95rem;
+  text-align: left; 
+}  
 
 #font-color {
   color: #FFC423
@@ -144,4 +157,58 @@ max-height: 50px;
     }
 }
 
+//fixtures
+
+.yellow-underline-fixtures {
+  width: 2.5%;
+  color: #f00;
+  background-color: #FFC423;
+  height: 5px;
+  margin: auto;
+}
+
+  .fixture-buttons {
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+//fixture-buttons
+[type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
+    position: relative;
+    padding-left: 25px;
+    font-size: .85rem;
+    color: #10155E;
+    margin-bottom: -5px;
+    overflow: hidden;
+
+}
+
+.blue.darken-4 {
+    background-color: #FFC423 !important;
+}
+
+.btn, .btn-large {
+    color: #10155E;
+    background-color: #FFC423;
+    font-size: .85rem;
+}
+
+.btn, .btn-large, .btn-flat {
+    border: none;
+    border-radius: 2px;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    outline: 0;
+    padding: 0 2rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.list-all {
+  font-size: 1.05rem;
+  font-color: #FFC423;
+}
 

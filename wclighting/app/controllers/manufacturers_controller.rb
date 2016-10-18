@@ -20,6 +20,8 @@ class ManufacturersController < ApplicationController
         # binding.pry
       @filtered_manufacturers << pt.manufacturers 
       @filtered_manufacturers = @filtered_manufacturers.flatten.uniq
+      @selected_pt = @collection.last
+      # binding.pry
   	end
   end
 
