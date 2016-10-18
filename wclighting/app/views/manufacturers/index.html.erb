@@ -1,21 +1,10 @@
-      <p> Fixtures </p>
+<h4 class="center"> Fixtures </h4>
 
 <form class="filter_form", method="get"><div>
   <%= collection_radio_buttons(:product_type, :product_type_ids, ProductType.all, :id, :name) %></div>
   <input type="submit" name="commit">
 </form>
-
-<% if @filtered_manufacturers%>
-		<% @filtered_manufacturers.each do |manufacturer| %>
-		<%= manufacturer.name %>
-		<%end%>
-		<br><br><%= link_to "List All Manufacturers", manufacturers_path %>
-<%else%>
-
-
-
-
-<%end%>
+<br><br><%= link_to "List All Manufacturers", manufacturers_path %>
 
 <div class="man container">
 	<h2 class="center">Manufacturers</h2>
@@ -25,8 +14,56 @@
 		<%= link_to 'Add New Manufacturer', new_manufacturer_path, class: 'link' %>
 		<% end %>
 	</div>
-	<% if @manufacturers %>
+</div>
+<% if @filtered_manufacturers%>
     <div class="row">
+        <% @filtered_manufacturers.each do |manufacturer| %>          
+          <div class="col s6 m4 l3">
+            <div class="card card-manu">
+              <div class="card-image image-manu">
+                <a class="modal-trigger waves-effect waves-light" href="#modal<%= manufacturer.id %>"><%= image_tag( manufacturer.logo, class: "manu-img") %></a>
+              </div>
+              <div class="card-action site-manu">
+                <a href="<%= manufacturer.website %>"><%= manufacturer.name %></a>
+              </div>
+            </div>
+          </div>
+
+          <div id="modal<%= manufacturer.id %>" class="modal modal-fixed-footer">
+            <div class="modal-content">
+
+              <div id="profile">
+                <%= image_tag( manufacturer.logo, class: "manu-logo") %>
+                <p style="float:right;"><%= manufacturer.profile %></p>
+              </div>
+              <div class="slider">
+                <ul class="slides">
+                  <% manufacturer.images.each do |image| %> 
+                  <li>
+                    <%= image_tag(image.img_file_name)%>
+                  </li>  
+                <%end%> 
+              </div>                    
+            </div>
+
+            <div class="modal-footer">
+              <a href="#!" class="modal-action modal-close waves-effect waves-blue btn-flat ">Close</a>
+              <% manufacturer.product_types.each do |p| %>  
+                  <p> <%= p.name%> </p>
+                    <%end%> 
+              <% if admin_signed_in? %>
+              <%= link_to 'Edit', edit_manufacturer_path(manufacturer), class: 'btn-flat' %>
+              <%= link_to 'Delete', manufacturer_path(manufacturer),
+                method: :delete,
+                data: { confirm: 'Are you sure you want to delete this article?' }, class: 'btn-flat'  %>
+                <% end %>
+            </div>
+          </div>
+
+        <% end %>
+    </div>
+    <%else%>
+<div class="row">
         <% @manufacturers.each do |manufacturer| %>          
           <div class="col s6 m4 l3">
             <div class="card card-manu">
@@ -39,38 +76,47 @@
             </div>
           </div>
 
-					<div id="modal<%= manufacturer.id %>" class="modal modal-fixed-footer">
-						<div class="modal-content">
+          <div id="modal<%= manufacturer.id %>" class="modal modal-fixed-footer">
+            <div class="modal-content">
 
-							<div id="profile">
-								<%= image_tag( manufacturer.logo, class: "manu-logo") %>
-								<p style="float:right;"><%= manufacturer.profile %></p>
-							</div>
-						  <div class="slider">
-						    <ul class="slides">
-						    	<% manufacturer.images.each do |image| %>	
-						      <li>
-						      	<%= image_tag(image.img_file_name)%>
-						      </li>  
-						    <%end%> 
-						  </div>       						  
-						</div>
+              <div id="profile">
+                <%= image_tag( manufacturer.logo, class: "manu-logo") %>
+                <p style="float:right;"><%= manufacturer.profile %></p>
+              </div>
+              <div class="slider">
+                <ul class="slides">
+                  <% manufacturer.images.each do |image| %> 
+                  <li>
+                    <%= image_tag(image.img_file_name)%>
+                  </li>  
+                <%end%> 
+              </div>                    
+            </div>
 
-						<div class="modal-footer">
-							<a href="#!" class="modal-action modal-close waves-effect waves-blue btn-flat ">Close</a>
-							<% manufacturer.product_types.each do |p| %>	
-						      <p>	<%= p.name%> </p>
-						      	<%end%> 
-							<% if admin_signed_in? %>
-							<%= link_to 'Edit', edit_manufacturer_path(manufacturer), class: 'btn-flat' %>
-							<%= link_to 'Delete', manufacturer_path(manufacturer),
-								method: :delete,
-								data: { confirm: 'Are you sure you want to delete this article?' }, class: 'btn-flat'  %>
-								<% end %>
-						</div>
-					</div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-action modal-close waves-effect waves-blue btn-flat ">Close</a>
+              <% manufacturer.product_types.each do |p| %>  
+                  <p> <%= p.name%> </p>
+                    <%end%> 
+              <% if admin_signed_in? %>
+              <%= link_to 'Edit', edit_manufacturer_path(manufacturer), class: 'btn-flat' %>
+              <%= link_to 'Delete', manufacturer_path(manufacturer),
+                method: :delete,
+                data: { confirm: 'Are you sure you want to delete this article?' }, class: 'btn-flat'  %>
+                <% end %>
+            </div>
+          </div>
 
-				<% end %>
-		</div>
-	<% end %>
+        <% end %>
+    </div>
+
 </div>
+		<%end%>
+
+		
+
+
+
+
+
+	
