@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :images
   end
 	resources :employees
-  resources :product_types, :path => "fixtures"
+  resources :product_types, :path => "admin_fixtures"
   devise_for :admins
 
   # get '/manufacturers' => 'manufacturers#index'

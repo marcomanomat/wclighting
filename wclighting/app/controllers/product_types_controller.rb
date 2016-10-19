@@ -1,55 +1,50 @@
 class ProductTypesController < ApplicationController
 
   def index
+    @product_types = ProductType.all.order('name ASC')
     # binding.pry
-    # @manufacturer = Manufacturer.find(params[:manufacturer_id])
-    # @product_types = ProductType.all
-#     @collection = []
-#     # @collection << ProductType.where(id: params[:product_type][:product_type_ids])
-#     # binding.pry
-#     @collection = @collection.flatten
-# # binding.pry
-#     @mmanufacturers = []
-#     # binding.pry
-#     @collection.each do |pt|
-#     		binding.pry
-#     	@mmanufacturers << pt.manufacturers 
-#     	@mmanufacturers = @mmanufacturers.flatten.uniq
-    # end
-
-
-    # @mmanufacturers
-    # binding.pry
-    # @filtered = ProductType.find(params[:id])
   end
 
 	def show
 		@product_type = ProductType.find(params[:id])
 	end
 
+  def new
+    @product_type = ProductType.new
+  end
+
+	def create
+		@product_type =  ProductType.new(product_type_params)
+		@product_type.save
+    # binding.pry
+    if @product_type.save
+      redirect_to "/manufacturers"
+    else
+      render action: :new
+    end
+	end
 
 	def edit
 		@product_type = ProductType.find(params[:id])
 	end
 
-  # def update
-  # 	@product_type= ProductType.find(params[:id])
-  #   @product_type.update_attributes(manufacturer_params)
-  #   redirect_to "/manufacturers"
-  # end
+  def update
+  	@product_type = ProductType.find(params[:id])
+    @product_type.update_attributes(product_type_params)
+    redirect_to "/admin_fixtures"
+  end
 
   def destroy
   	@product_type = ProductType.find(params[:id])
-    @manufacturer = @product_type.manufacturer
     @product_type.destroy
-    redirect_to "/manufacturers/#{@manufacturer.id}/edit"
+    redirect_to "/admin_fixtures"
   end
 
 
 	private
 
- # def all_product_types
- #    {product_type_ids: []}
- #  end
+ def product_type_params
+    params.require(:product_type).permit(:name)
+  end
 
 end

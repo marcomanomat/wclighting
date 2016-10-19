@@ -56,7 +56,7 @@ body {
 }
 
 .yellow-underline {
-  width: 15%;
+  width: 12%;
   color: #f00;
   background-color: #FFC423;
   height: 5px;
@@ -160,7 +160,7 @@ max-height: 50px;
 //fixtures
 
 .yellow-underline-fixtures {
-  width: 2.5%;
+  width: 3.5%;
   color: #f00;
   background-color: #FFC423;
   height: 5px;
@@ -168,7 +168,6 @@ max-height: 50px;
 }
 
   .fixture-buttons {
-    width: 100px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -181,8 +180,12 @@ max-height: 50px;
     color: #10155E;
     margin-bottom: -5px;
     overflow: hidden;
+    padding-left: 19.5px;
+    padding-right: 5px;
+
 
 }
+
 
 .blue.darken-4 {
     background-color: #FFC423 !important;
@@ -201,14 +204,55 @@ max-height: 50px;
     height: 25px;
     line-height: 25px;
     outline: 0;
-    padding: 0 2rem;
+    padding: 0 1rem;
     text-transform: uppercase;
     vertical-align: middle;
     -webkit-tap-highlight-color: transparent;
 }
 
 .list-all {
-  font-size: 1.05rem;
-  font-color: #FFC423;
+    a {
+      color: #10155E;
+      }
+      padding-bottom: -2cm;
 }
+
+.filter-buttons {
+       a {
+      color: #10155E;
+      }
+}
+
+.form-multiple-column .form-radio-item, .form-multiple-column .form-checkbox-item{
+    width:55px;
+}
+
+.add-new-fixture {
+  font-size: .95rem;
+  text-align: center; 
+}
+
+.columns{
+    float: left;
+    position: relative;
+    margin-right: 20px;
+}
+
+#fixture-index {
+  a {
+  color: navy;
+  font-size: 1.15rem;
+  font-weight: bold;
+  }
+  a:hover {
+    color: #FFC423;
+    text-decoration: underline;
+  }
+}  
+// COLOR PALLETE:
+// Midnight Blue:       #10155E
+// Dark Imperial Blue:  #113D70
+// Air Force Blue:      #5A80AA
+// Gainsboro:           #D8DFE7
+// Deep Lemon:          #FFC423
 

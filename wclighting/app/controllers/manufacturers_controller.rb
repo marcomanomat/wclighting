@@ -2,26 +2,24 @@ class ManufacturersController < ApplicationController
 # before_filter :authenticate_admin!, only: [:new, :edit, :destroy]
 
 	def index
-    # @manufacturers = Manufacturer.all
-    # binding.pry
-    # @collection = [] 
     if params[:product_type].nil?  || params[:product_type][:product_type_ids] == ""
-      @manufacturers = Manufacturer.all
+      @manufacturers = Manufacturer.all.order('name ASC')
       # binding.pry
     else
-    @collection = [] 
-    @collection << ProductType.where(id: params[:product_type][:product_type_ids])
-    # binding.pry
-    @collection = @collection.flatten
-# binding.pry
-    @filtered_manufacturers = []
-    # binding.pry
-    @collection.each do |pt|
-        # binding.pry
-      @filtered_manufacturers << pt.manufacturers 
-      @filtered_manufacturers = @filtered_manufacturers.flatten.uniq
-      @selected_pt = @collection.last
+      @collection = [] 
+      @collection << ProductType.where(id: params[:product_type][:product_type_ids])
       # binding.pry
+      @collection = @collection.flatten
+  # binding.pry
+      @filtered_manufacturers = []
+      # binding.pry
+      @collection.each do |pt|
+          # binding.pry
+        @filtered_manufacturers << pt.manufacturers 
+        @filtered_manufacturers = @filtered_manufacturers.flatten.uniq
+        @selected_pt = @collection.last
+        # @product_type = @collection.first
+        # binding.pry
   	end
   end
 

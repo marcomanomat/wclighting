@@ -6,19 +6,26 @@
 	<form class="filter_form", method="get">
 
 	<div class="fixture-buttons">
-  	<%= collection_radio_buttons(:product_type, :product_type_ids, ProductType.all, :id, :name) %>
+
+  	<%= collection_radio_buttons(:product_type, :product_type_ids, ProductType.all.order('name ASC'), :id, :name) %>
 	</div>
 	
-	<div class="filter-button">
+	<div class="filter-buttons">
+		<% if @filtered_manufacturers%>
+		<button class="btn waves-effect waves-blue blue darken-4" formaction="/manufacturers">All Manufacturers
+			<i class="material-icons left">language</i>
+  	</button>	
+  	<% end %>	
 		<button class="btn waves-effect waves-blue blue darken-4" type="submit" name="action">Filter
-    	<i class="material-icons left">add</i>
-  	</button>
+    	<i class="material-icons left">swap_vert</i>
+  	</button>  
 	</div>
-
 	</form>
-		<div class="list-all">
-			<%= link_to "List All Manufacturers", manufacturers_path %>
+			<% if admin_signed_in? %>
+		<div class="add-new-fixture">
+		<%= link_to 'Add/Edit/Delete - Fixtures', product_types_path, class: 'link' %>
 		</div>
+		<% end %>
 		<hr>
 </div>
 
@@ -70,15 +77,15 @@
             </div>
 
             <div class="modal-footer">
-              <a href="#!" class="modal-action modal-close waves-effect waves-blue btn-flat ">Close</a>
+              <a href="#!" class="modal-action modal-close waves-effect waves-blue btn ">Close</a>
               <% manufacturer.product_types.each do |p| %>  
                   <p> <%= p.name%> </p>
                     <%end%> 
               <% if admin_signed_in? %>
-              <%= link_to 'Edit', edit_manufacturer_path(manufacturer), class: 'btn-flat' %>
+              <%= link_to 'Edit', edit_manufacturer_path(manufacturer), class: 'btn' %>
               <%= link_to 'Delete', manufacturer_path(manufacturer),
                 method: :delete,
-                data: { confirm: 'Are you sure you want to delete this article?' }, class: 'btn-flat'  %>
+                data: { confirm: 'Are you sure you want to delete this manufacturer?' }, class: 'btn'  %>
                 <% end %>
             </div>
           </div>
@@ -117,15 +124,15 @@
             </div>
 
             <div class="modal-footer">
-              <a href="#!" class="modal-action modal-close waves-effect waves-blue btn-flat ">Close</a>
+              <a href="#!" class="modal-action modal-close waves-effect waves-blue btn ">Close</a>
               <% manufacturer.product_types.each do |p| %>  
                   <p> <%= p.name%> </p>
                     <%end%> 
               <% if admin_signed_in? %>
-              <%= link_to 'Edit', edit_manufacturer_path(manufacturer), class: 'btn-flat' %>
+              <%= link_to 'Edit', edit_manufacturer_path(manufacturer), class: 'btn' %>
               <%= link_to 'Delete', manufacturer_path(manufacturer),
                 method: :delete,
-                data: { confirm: 'Are you sure you want to delete this article?' }, class: 'btn-flat'  %>
+                data: { confirm: 'Are you sure you want to delete this article?' }, class: 'btn'  %>
                 <% end %>
             </div>
           </div>

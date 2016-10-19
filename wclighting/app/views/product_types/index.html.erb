@@ -1,12 +1,24 @@
-      <p> Fixtures </p>
+<div class="fixtures-section center">
+	<h5> Admin Fixtures </h5>
+	<div class="yellow-underline"></div>
+</div>
 
-<form class="filter_form", method="get"><div>
-  <%= collection_radio_buttons(:product_type, :product_type_ids, ProductType.all, :id, :name) %></div>
-  <input type="submit" name="commit">
-	
-</form>
+    <div class="add-new-fixture">
+    <%= link_to '+ Add New Fixture', new_product_type_path, class: 'link' %>
+    </div><br>
 
-<% @manufacturers.each do |m| %>
+<div class="container" id="fixture-index">
+
+
+				<% @product_types.each do |pt| %>
 	
-<div><%= m.name %><div>
-<%end%>
+      <div>
+        <ul class="columns btn-flat" <li><a href="/admin_fixtures/<%=pt.id%>/edit"><%=pt.name%></a></li>
+        </ul>
+      </div>
+      <% end %> 
+
+  </div>
+</div>
+
+      
