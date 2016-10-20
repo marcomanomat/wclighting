@@ -1,6 +1,17 @@
 <div class="parallax-container">
-  <div class="parallax"><%= image_tag "CancerCenter" %>
-  </div>
+  <div class="slider">
+    <ul class="slides">
+      <%if Company.last%>
+        <% Company.last.images.each do |image| %> 
+        <li>
+          <div class="parallax"><%= image_tag(image.img_file_name)%>
+        </li>
+        <%end%> 
+      <%else%>
+        <h1>HI, CREATE YOUR COMPANY!</h1> 
+    <%end%> 
+  </div> 
+
 </div>
 <div class="container">
   <h2 class="center">Featured</h2>

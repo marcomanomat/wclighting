@@ -12,11 +12,18 @@
   <body>
 
    <div class="side-nav fixed indigo lighten-5 z-depth-2" style="text-align:center;">
-    <% if admin_signed_in? %>
-      <%= link_to('Logout', destroy_admin_session_path, :method=>'delete') %>
-    <% else %>
-      <%= link_to('Admin Login', new_admin_session_path)  %>
-    <% end %>     
+      <div class="login">
+      <% if admin_signed_in? %>
+
+        <%= link_to('Logout', destroy_admin_session_path, :method=>'delete') %>
+        <%= link_to('Edit Company', '/companies/1/edit') %>
+          <%if Company.all == [] %>
+            <%= link_to('Initial Setup', new_company_path) %>
+          <%end%>
+      <% else %>
+        <%= link_to('Admin Login', new_admin_session_path)  %>
+      <% end %> 
+  </div>
     <%= image_tag "Logo", style:'width:auto; height:270px' %>
       <div id="nav-links">
          <ul><a href="#" class="indigo-text text-darken-4">About</a></li>

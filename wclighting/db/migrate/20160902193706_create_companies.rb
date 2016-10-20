@@ -9,4 +9,13 @@ class CreateCompanies < ActiveRecord::Migration[5.0]
       t.timestamps null: false
     end
   end
+
+  def self.up
+    add_attachment :img
+  end
+
+  def self.down
+    remove_attachment :img
+  end    
+    
 end

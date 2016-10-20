@@ -3,7 +3,9 @@ class ImagesController < ApplicationController
   def index
     # binding.pry
     @manufacturer = Manufacturer.find(params[:manufacturer_id])
-    @images = @manufacturer.images.all
+    # @company = Company.find(param[:company_id])
+    @manu_images = @manufacturer.images.all
+    # @company_images = @company.images.all
   end
 
 	def show
