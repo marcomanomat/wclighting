@@ -63,8 +63,12 @@ body {
   margin-bottom: 2.25m;
 }
 
-// modal stuff
+#manufacturers {
+  min-height: 1.5px;
+  max-width: 100%;
+}
 
+// modal stuff
 
 .modal { width: 55% !important ; height: 100% !important }
 
@@ -96,16 +100,22 @@ body {
 }
 
 html {
-    line-height: 1.5;
+    line-height: 0.84;
     font-weight: 120;
     text-shadow: .5px .5px #FFC423;
 
 }
 
 // maufacturer stuff
-
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
-    text-shadow: .2px .2px #10155E;
+    text-shadow: .5px .5px black;
+    color: #FFC423;
+    font-size: 12.95px;
+    font-weight: bolder;
+}
+
+#man-count {
+  font-size: 15.5px;
 }
 
 h4 {
@@ -118,9 +128,13 @@ h4 {
     height:190px;
   }
 
+.card .card-action {
+    background-color: #10155E;
+}  
+
   .image-manu {
 text-align: center;
-height: 65%;
+height: 75%;
 position: absolute;
   }
 
@@ -159,6 +173,11 @@ max-height: 50px;
 
 //fixtures
 
+.fixtures-section {
+  width: 78.3%;
+  margin: auto;
+}
+
 .yellow-underline-fixtures {
   width: 3.5%;
   color: #f00;
@@ -170,6 +189,8 @@ max-height: 50px;
   .fixture-buttons {
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 20px;
+    padding-tom: 15px;
   }
 
 //fixture-buttons
@@ -180,10 +201,16 @@ max-height: 50px;
     color: #10155E;
     margin-bottom: -5px;
     overflow: hidden;
-    padding-left: 19.5px;
+    padding-left: 21px;
     padding-right: 5px;
 
 
+}
+
+[type="radio"] + label:before, [type="radio"] + label:after {
+    margin: 6.6px;
+    width: 11px;
+    height: 11px;
 }
 
 
@@ -209,6 +236,7 @@ max-height: 50px;
     vertical-align: middle;
     -webkit-tap-highlight-color: transparent;
 }
+
 
 .list-all {
     a {
@@ -248,7 +276,26 @@ max-height: 50px;
     color: #FFC423;
     text-decoration: underline;
   }
+}
+
+//button filler color
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:after {
+    background-color: #FFC423;
 }  
+
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:before, [type="radio"].with-gap:checked + label:after {
+    border: 1px solid #10155E;
+}
+
+[type="radio"]:not(:checked) + label:before, [type="radio"]:not(:checked) + label:after {
+    border: 1px solid #10155E;
+}
+
+[type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
+    font-size: .83rem;
+    font-weight: 100;
+}
+
 // COLOR PALLETE:
 // Midnight Blue:       #10155E
 // Dark Imperial Blue:  #113D70

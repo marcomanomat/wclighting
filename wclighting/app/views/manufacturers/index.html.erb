@@ -1,4 +1,5 @@
 
+
 <div class="fixtures-section center">
 	<h5> Fixtures </h5>
 	<div class="yellow-underline-fixtures"></div>
@@ -16,6 +17,7 @@
 			<i class="material-icons left">language</i>
   	</button>	
   	<% end %>	
+
 		<button class="btn waves-effect waves-blue blue darken-4" type="submit" name="action">Filter
     	<i class="material-icons left">swap_vert</i>
   	</button>  
@@ -26,8 +28,9 @@
 		<%= link_to 'Add/Edit/Delete - Fixtures', product_types_path, class: 'link' %>
 		</div>
 		<% end %>
-		<hr>
+		<hr id="manufacturers">
 </div>
+
 
 
 
@@ -45,7 +48,7 @@
 	</div>
 
 <% if @filtered_manufacturers%>
-			<h5><%=@selected_pt.name%> (<%= @filtered_manufacturers.count %>):</h5>
+			<h5 id="man-count"><%=@selected_pt.name%> (<%= @filtered_manufacturers.count %>):</h5>
     <div class="row">
         <% @filtered_manufacturers.each do |manufacturer| %>          
           <div class="col s6 m4 l3">
@@ -55,6 +58,7 @@
               </div>
               <div class="card-action site-manu">
                 <a href="<%= manufacturer.website %>"><%= manufacturer.name %></a>
+
               </div>
             </div>
           </div>
@@ -96,7 +100,7 @@
 <div class="row">
         <% @manufacturers.each do |manufacturer| %>          
           <div class="col s6 m4 l3">
-            <div class="card card-manu">
+            <div class="card card-manu hoverable">
               <div class="card-image image-manu">
                 <a class="modal-trigger waves-effect waves-light" href="#modal<%= manufacturer.id %>"><%= image_tag( manufacturer.logo, class: "manu-img") %></a>
               </div>
