@@ -31,13 +31,13 @@ class ProductTypesController < ApplicationController
   def update
   	@product_type = ProductType.find(params[:id])
     @product_type.update_attributes(product_type_params)
-    redirect_to "/admin_fixtures"
+    redirect_to "/admin_linecard"
   end
 
   def destroy
   	@product_type = ProductType.find(params[:id])
     @product_type.destroy
-    redirect_to "/admin_fixtures"
+    redirect_to "/admin_linecard"
   end
 
 

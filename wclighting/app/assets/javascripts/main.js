@@ -13,7 +13,10 @@ $('.slider').slider({
     }
   );			
 
-  $('.carousel').carousel();
+$('.carousel.carousel-slider').carousel({
+  full_width: true
+  }
+);
 
 $('.modal-trigger').leanModal({
       starting_top: '1%',

@@ -1,7 +1,7 @@
 
 
 <div class="fixtures-section center">
-	<h5> Fixtures </h5>
+	<h5> Line Card </h5>
 	<div class="yellow-underline-fixtures"></div><br>
 
 	<form class="filter_form", method="get">
@@ -24,8 +24,8 @@
 	</div>
 	</form>
 			<% if admin_signed_in? %>
-		<div class="add-new-fixture">
-		<%= link_to 'Add/Edit/Delete - Fixtures', product_types_path, class: 'link' %>
+		<div class="add-new-fixture"><br>
+		<%= link_to 'Add/Edit/Delete - Line Card', product_types_path, class: 'link' %>
 		</div>
 		<% end %>
 		<hr id="manufacturers">
@@ -113,12 +113,15 @@
           <div id="modal<%= manufacturer.id %>" class="modal modal-fixed-footer">
             <div class="modal-content">
 
-              <div id="profile">
-                <%= image_tag( manufacturer.logo, class: "manu-logo") %>
-                <p style="float:right;"><%= manufacturer.profile %></p>
-              </div>
-              <div class="slider">
-                <ul class="slides">
+
+              <div class="slider" id="manu-slider">
+                <ul class="slides right">
+              <div>
+              <%= image_tag( manufacturer.logo, class: "manu-logo") %>
+           	 </div>
+           	 <div>      
+           	 		<p><%= manufacturer.profile %></p> 
+           	 </div>         	
                   <% manufacturer.images.each do |image| %> 
                   <li>
                     <%= image_tag(image.img_file_name)%>
@@ -129,9 +132,7 @@
 
             <div class="modal-footer">
               <a href="#!" class="modal-action modal-close waves-effect waves-blue btn ">Close</a>
-              <% manufacturer.product_types.each do |p| %>  
-                  <p> <%= p.name%> </p>
-                    <%end%> 
+
               <% if admin_signed_in? %>
               <%= link_to 'Edit', edit_manufacturer_path(manufacturer), class: 'btn' %>
               <%= link_to 'Delete', manufacturer_path(manufacturer),
