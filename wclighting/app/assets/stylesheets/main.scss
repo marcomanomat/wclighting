@@ -5,10 +5,73 @@
 // Gainsboro:           #D8DFE7
 // Deep Lemon:          #FFC423
 
+
+#about{
+  padding-top: 25px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+//about text
+.flow-text{
+  font-family: GillSans, Calibri, Trebuchet, sans-serif;  
+}
+
+//about-logo
+.about-logo {
+  padding-top: 0;
+}
+
+
+
+.slider {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+ .slider .slides {
+    background-color: transparent;
+    margin: 0;
+    height: 900px;
+}
+
+.slider .indicators {
+  bottom: 60px;
+  z-index: 100;
+  /* text-align: left; */
+}
+
+.slider .slides li img {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size:100% auto;
+    background-repeat: no-repeat;
+}
+
+//manufacturer slider images
+#manu-slider .slides li img {
+    height: 50%;
+    width: 50%;
+    background-position: center;
+    background-size:100% auto;
+    background-repeat: no-repeat;
+}
+
 html {
   @extend .indigo-text, .text-darken-4;
   font-family: 'Fjalla One', sans-serif;
   min-width: 300px; 
+}
+
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 2.3px;
 }
 
 body {
@@ -16,10 +79,20 @@ body {
 
  }
 
-.side-nav {
-    a {
-      font-size: 1em;
-      }
+.side-nav a {
+    color: rgba(0, 0, 0, 0.87);
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    height: 35px;
+    line-height: 19px;
+    padding: 0 15px;
+}
+
+.login {
+  a {
+
+  }
 }
 
 #nav-links {
@@ -31,7 +104,7 @@ body {
 }
 
 .parallax-container {
-  height: 730px;
+  height: auto;
 }
 
 .card {  
@@ -46,14 +119,121 @@ body {
 }
 
 .yellow-underline {
-  width: 10%;
+  width: 12%;
   color: #f00;
   background-color: #FFC423;
   height: 5px;
-  margin: auto;
-  margin-bottom: 1.50cm;
+  margin-bottom: 2.25m;
 }
 
+#manufacturers {
+  min-height: 1.5px;
+  max-width: 100%;
+}
+
+// modal stuff
+
+//width of modal
+.modal { width: 70% !important ; max-height: 100% !important ; overflow-y: hidden !important ;} 
+
+.modal .modal-content {
+    padding: 24px;
+    padding-top: 12px;
+    padding-right: 24px;
+    padding-bottom: 12px;
+    padding-left: 24px;
+}
+
+.modal.modal-fixed-footer .modal-content {
+    position: absolute;
+    height: calc(100% - 56px);
+    max-height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+}
+
+//height of modal footer
+.modal .modal-footer {
+    height: 125px;
+}
+
+.slider .slides li img {
+    height: 50%;
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+.slider .indicators .indicator-item.active {
+    background-color: #FFC423;
+}
+#profile {
+  display: inline-block;
+}
+
+.manu-logo {
+  height: 80%;
+  width: 80%;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+html {
+    line-height: 0.84;
+    font-weight: 120;
+    text-shadow: .5px .5px #FFC423;
+
+}
+
+// maufacturer stuff
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+    text-shadow: .5px .5px black;
+    color: #FFC423;
+    font-size: 12.95px;
+    font-weight: bolder;
+}
+
+#man-count {
+  font-size: 15.5px;
+}
+
+h4 {
+  text-shadow: 1.4px 1.4px #10155E;
+  color: #FFC423;
+}
+
+  .card-manu {
+    width:190px;
+    height:190px;
+  }
+
+.card .card-action {
+    background-color: #10155E;
+}  
+
+  .image-manu {
+text-align: center;
+height: 75%;
+position: absolute;
+  }
+
+  .site-manu {
+text-align: center;
+margin: 0;
+padding: 0;
+max-height: 50px;
+  }
+
+.add-new-manu {
+  font-size: .95rem;
+  text-align: left; 
+}  
+
+#font-color {
+  color: #FFC423
+}
 
 @media (min-width: 992px) {
     body {
@@ -72,4 +252,135 @@ body {
     }
 }
 
+//fixtures
+
+.fixtures-section {
+  width: 78.3%;
+  margin: auto;
+}
+
+.yellow-underline-fixtures {
+  width: 3.5%;
+  color: #f00;
+  background-color: #FFC423;
+  height: 5px;
+  margin: auto;
+}
+
+  .fixture-buttons {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+    padding-tom: 15px;
+  }
+
+//fixture-buttons
+[type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
+    position: relative;
+    padding-left: 25px;
+    font-size: .85rem;
+    color: #10155E;
+    margin-bottom: -5px;
+    overflow: hidden;
+    padding-left: 21px;
+    padding-right: 5px;
+
+
+}
+
+[type="radio"] + label:before, [type="radio"] + label:after {
+    margin: 6.6px;
+    width: 11px;
+    height: 11px;
+}
+
+
+.blue.darken-4 {
+    background-color: #FFC423 !important;
+}
+
+.btn, .btn-large {
+    color: #10155E;
+    background-color: #FFC423;
+    font-size: .85rem;
+}
+
+.btn, .btn-large, .btn-flat {
+    border: none;
+    border-radius: 2px;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    outline: 0;
+    padding: 0 1rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+.list-all {
+    a {
+      color: #10155E;
+      }
+      padding-bottom: -2cm;
+}
+
+.filter-buttons {
+       a {
+      color: #10155E;
+      }
+}
+
+.form-multiple-column .form-radio-item, .form-multiple-column .form-checkbox-item{
+    width:55px;
+}
+
+.add-new-fixture {
+  font-size: .95rem;
+  text-align: center; 
+}
+
+.columns{
+    float: left;
+    position: relative;
+    margin-right: 20px;
+}
+
+#fixture-index {
+  a {
+  color: navy;
+  font-size: 1.15rem;
+  font-weight: bold;
+  }
+  a:hover {
+    color: #FFC423;
+    text-decoration: underline;
+  }
+}
+
+//button filler color
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:after {
+    background-color: #FFC423;
+}  
+
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:before, [type="radio"].with-gap:checked + label:after {
+    border: 1px solid #10155E;
+}
+
+[type="radio"]:not(:checked) + label:before, [type="radio"]:not(:checked) + label:after {
+    border: 1px solid #10155E;
+}
+
+[type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
+    font-size: .83rem;
+    font-weight: 100;
+}
+
+// COLOR PALLETE:
+// Midnight Blue:       #10155E
+// Dark Imperial Blue:  #113D70
+// Air Force Blue:      #5A80AA
+// Gainsboro:           #D8DFE7
+// Deep Lemon:          #FFC423
 

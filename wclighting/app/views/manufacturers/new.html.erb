@@ -1,4 +1,4 @@
-
+<div class="form container">
 <%= form_for @manufacturer do |f| %>
   <div class="col-sm-6">
     <br><br>
@@ -26,9 +26,17 @@
       </div>
     <% end %>
   </div>
+  <div id="fixtures"> 
+    <%= f.fields_for :product_types, ProductType.new do |i| %>
+      <%= render 'product_type_fields', :f => i %>
+
+      </div>
+    <% end %>
+  </div>  
   <%= f.submit 'Upload Manufacturer'%>
   <% @manufacturer.errors.full_messages.each do |msg| %>
   <li>Error:  <%= msg %>.</li>
   </div>
 <% end %>
 <% end %>
+</div>

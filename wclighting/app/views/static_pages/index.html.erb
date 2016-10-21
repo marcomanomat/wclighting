@@ -1,80 +1,35 @@
-<div class="parallax-container">
-  <div class="parallax"><%= image_tag "CancerCenter" %>
+<div class="main-page">  
+  <div class="parallax-container">
+    <div class="slider">
+      <ul class="slides">
+        <%if Company.last%>
+          <% Company.last.images.each do |image| %> 
+          <li>
+            <div class="parallax"><%= image_tag(image.img_file_name)%>
+          </li>
+          <%end%> 
+        <%else%>
+          <h1>HI, CREATE YOUR COMPANY!</h1> 
+      <%end%> 
+    </div> 
   </div>
-</div>
-<div class="container">
-  <h2 class="center">Featured</h2>
-  <div class="yellow-underline"></div>
-    <div class="feat-cards">
-      <div class="feat-row-1">
-        <div class="row">
-          <div class="col s6">
-            <div class="card">
-              <div class="card-image">
-                <%= image_tag('featured1', class: "responsive-img")%>
-                <span class="card-title">Comcast Center</span>
-              </div>
-              <div class="card-content">
-                <p>The 58-story, 974 ft. Comcast Center tower is the tallest building in Philadelphia. </p>
-              </div>
-              <div class="card-action">
-                <a href="http://www.i2systems.com/">Comcast Center</a>
-              </div>
-            </div>
-          </div>
-          <div class="col s6">
-            <div class="card">
-              <div class="card-image">
-                <%= image_tag('featured2', class: "responsive-img")%>
-                <span class="card-title">Health First</span>
-              </div>
-              <div class="card-content">
-                <p>Health First is a not-for-profit community health system located in Brevard County, Florida.</p>
-              </div>
-              <div class="card-action">
-                <a href="http://www.i2systems.com/">Health First</a>
-              </div>
-            </div>
-          </div>
 
-        </div>
-       </div>
-       
-       <div class="feat-row-2"> 
-        <div class="row">
-          <div class="col s6">
-            <div class="card">
-              <div class="card-image">
-                <%= image_tag('featured3', class: "responsive-img")%>
-                <span class="card-title">High Line (NYC)</span>
-              </div>
-              <div class="card-content">
-                <p>The High Line is a 1.45-mile-long linear park built in Manhattan on an elevated section of a disused New York Central Railroad spur called the West Side Line.</p>
-              </div>
-              <div class="card-action">
-                <a href="http://www.i2systems.com/">High Line</a>
-              </div>
-            </div>
-          </div>
-          <div class="col s6">
-            <div class="card">
-              <div class="card-image">
-                <%= image_tag('featured4', class: "responsive-img")%>
-                <span class="card-title">Venetian Macau</span>
-              </div>
-              <div class="card-content">
-                <p>The Venetian Macao is a luxury hotel and casino resort owned by the American Las Vegas Sands company. The Venetian is a 39-story casino hotel on the Cotai Strip in Macau. </p>
-              </div>
-              <div class="card-action">
-                <a href="http://www.i2systems.com/">Venetian Macau</a>
-              </div>
-            </div>
-          </div>
-        </div>
-       </div>
 
-    </div>  
-  </div>  
+  <div class="container">
+      <div id="about-logo">
+      <%= image_tag "Logo", style:'width:auto; height:auto' %>
+      </div>  
+      <p class="flow-text">
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.
+       </p>
+       <p class="flow-text">
+        Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+      </p>
+      <p class="flow-text">
+      Have any more questions? Feel free to email us at <a href="quotes@wcltg.com">quotes@wcltg.com!
+      </p><br>            
+    </div> 
+</div>       
 
 
 

@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     resources :images
   end
 	resources :employees
+  resources :companies
+  
+  resources :product_types, :path => "admin_linecard"
   devise_for :admins
 
   # get '/manufacturers' => 'manufacturers#index'
@@ -14,10 +17,10 @@ Rails.application.routes.draw do
   # get '/manufacturers/edit' => 'manufacturers#edit'  
   # post '/manufacturers/edit' => 'manufacturers#update'
 
-  get '/employees' => 'employees#index'
-  get '/employees/new' => 'employees#new'
-  post '/employees/new' => 'employees#create'
-  get '/employees/edit' => 'employees#edit'  
-  post '/employees/edit' => 'employees#update'
+  # get '/employees' => 'employees#index'
+  # get '/employees/new' => 'employees#new'
+  # post '/employees/new' => 'employees#create'
+  # get '/employees/edit' => 'employees#edit'  
+  # post '/employees/edit' => 'employees#update'
 
 end

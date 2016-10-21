@@ -7,8 +7,22 @@ $( document ).ready( function(){
 
   $( '.parallax' ).parallax();
 
-  $('.carousel.carousel-slider').carousel({full_width: true});
+$('.slider').slider({
+			full_width: false,
+			height: 745,
+    }
+  );			
 
-  $('.modal-trigger').leanModal();
+$('.carousel.carousel-slider').carousel({
+  full_width: true
+  }
+);
+
+$('.modal-trigger').leanModal({
+      starting_top: '1%',
+      dismissible: true, // Modal can be dismissed by clicking outside of the modal
+      opacity: .55, // Opacity of modal background
+    }
+  );
 
 })
