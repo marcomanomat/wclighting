@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 	resources :employees
   resources :companies
   
+  resources :admins, only: [:new, :create]
+
   resources :product_types, :path => "admin_linecard"
   devise_for :admins
 

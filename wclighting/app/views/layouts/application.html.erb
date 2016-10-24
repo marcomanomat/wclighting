@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
   <head>
     <title>West Coast Lighting</title>
@@ -14,13 +15,15 @@
    <div class="side-nav fixed indigo lighten-5 z-depth-2" style="text-align:center;">
       <div class="login">
       <% if admin_signed_in? %>
-
         <%= link_to('Logout', destroy_admin_session_path, :method=>'delete') %>
         <%= link_to('Edit Company', '/companies/5/edit') %>
           <%if Company.all == [] %>
             <%= link_to('Initial Setup', new_company_path) %>
-          <%end%>
+          <%end%>        
       <% else %>
+          <%if Admin.all == [] %>
+            <%= link_to('Create Admin', new_admin_path) %>
+          <%end%>        
         <%= link_to('Admin Login', new_admin_session_path)  %>
       <% end %> 
   </div>

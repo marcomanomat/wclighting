@@ -14,7 +14,8 @@
 
 //about text
 .flow-text{
-  font-family: GillSans, Calibri, Trebuchet, sans-serif;  
+  font-family: GillSans, Calibri, Trebuchet, sans-serif;
+  right: 0px;  
 }
 
 //about-logo
@@ -56,6 +57,13 @@
     background-position: center;
     background-size:100% auto;
     background-repeat: no-repeat;
+}
+
+//manufacturer line card position
+[type="checkbox"] + label {
+    position: relative;
+    padding-left: 20px;
+    padding-right: 15px;
 }
 
 html {
@@ -137,11 +145,11 @@ body {
 .modal { width: 70% !important ; max-height: 100% !important ; overflow-y: hidden !important ;} 
 
 .modal .modal-content {
-    padding: 24px;
-    padding-top: 12px;
-    padding-right: 24px;
-    padding-bottom: 12px;
-    padding-left: 24px;
+    padding: 12px;
+    padding-top: 6px;
+    padding-right: 12px;
+    padding-bottom: 6px;
+    padding-left: 12px;
 }
 
 .modal.modal-fixed-footer .modal-content {
@@ -172,8 +180,8 @@ body {
 }
 
 .manu-logo {
-  height: 80%;
-  width: 80%;
+  max-height: 259px;
+  max-width: 150px;
 
     background-position: center;
     background-size: cover;
@@ -187,7 +195,7 @@ html {
 
 }
 
-// maufacturer stuff
+// manufacturer stuff
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
     text-shadow: .5px .5px black;
     color: #FFC423;
@@ -303,6 +311,7 @@ max-height: 50px;
     color: #10155E;
     background-color: #FFC423;
     font-size: .85rem;
+
 }
 
 .btn, .btn-large, .btn-flat {
@@ -316,6 +325,13 @@ max-height: 50px;
     text-transform: uppercase;
     vertical-align: middle;
     -webkit-tap-highlight-color: transparent;
+}
+
+.modal .modal-footer .btn, .modal .modal-footer .btn-large, .modal .modal-footer .btn-flat {
+    float: right;
+    margin: 6px 0;
+    position: relative;
+    z-index: 10;
 }
 
 
