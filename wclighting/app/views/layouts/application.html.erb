@@ -42,19 +42,18 @@
        $(".button-collapse").sideNav();
       </script>  
 
-      <footer class="footer indigo lighten-5 ">
+      <footer class="footer indigo lighten-5 " style="padding: 15px">
       <div class="contacts indigo-text text-lighten-2">
         <%if Company.all.any?%>
        <a class="email amber-text text-lighten-2" href="mailto:<%=Company.last.email%>"><%=Company.last.email.upcase%> </a>      
        <%array = Company.last.phone.split('')%>
        <%array.insert(3, ".")%>
        <%array.insert(7, ".")%>
-       <%=array.join%>
-
-          |   <%=Company.last.address%>
+       <span style="font-size: 14px"><%=array.join%></span><br><br>
+       <span style="font-size: 11.72px"><%=Company.last.address%></span><br>
       </div>
         <%else%>
-        <p>Enter company</p>
+        Enter company</span>
       <%end%>
 
       </footer>
