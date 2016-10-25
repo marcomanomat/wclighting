@@ -1,0 +1,16 @@
+<div class="form container">
+<%= form_for @admin do |f| %>
+  <div class="col-sm-6">
+    <br><br>
+    <%= f.label :email, "Email:"%>    
+    <%= f.text_area(:email) %>
+
+    <%= f.label :password, "Password:"%>    
+    <%= f.text_area(:password) %>
+    <%= f.submit 'Create Admin'%>
+    <%end%>
+  </div>
+</div>  
+
+  
+  

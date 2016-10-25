@@ -6,8 +6,10 @@ Rails.application.routes.draw do
     resources :images
   end
 	resources :employees
-  resources :companies
+  resources :companies, except: [:show,:new, :create, :destroy], :path => "about"
   
+  resources :admins, only: [:new, :create]
+
   resources :product_types, :path => "admin_linecard"
   devise_for :admins
 

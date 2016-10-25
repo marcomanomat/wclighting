@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
   <head>
     <title>West Coast Lighting</title>
@@ -11,22 +12,24 @@
 
   <body>
 
-   <div class="side-nav fixed indigo lighten-5 z-depth-2" style="text-align:center;">
+   <div class="side-nav fixed indigo lighten-5 z-depth-2 hide-on-med-and-down" style="text-align:center;">
       <div class="login">
       <% if admin_signed_in? %>
-
         <%= link_to('Logout', destroy_admin_session_path, :method=>'delete') %>
-        <%= link_to('Edit Company', '/companies/5/edit') %>
+        <%= link_to('Edit Company', "/about/#{Company.last.id}/edit") %>
           <%if Company.all == [] %>
             <%= link_to('Initial Setup', new_company_path) %>
-          <%end%>
+          <%end%>        
       <% else %>
+          <%if Admin.all == [] %>
+            <%= link_to('Create Admin', new_admin_path) %>
+          <%end%>        
         <%= link_to('Admin Login', new_admin_session_path)  %>
       <% end %> 
   </div>
     <%= image_tag "Logo", style:'width:auto; height:270px' %>
       <div id="nav-links">
-         <ul><a href="/static_pages#about-logo" class="indigo-text text-darken-4">About</a></li>
+         <ul><a href="/about" class="indigo-text text-darken-4">About</a></li>
         <ul><a href="/manufacturers" class="indigo-text text-darken-4">Line Card</a></li>
          <ul><a href="<%= manufacturers_path %>#manufacturers" class="indigo-text text-darken-4">Manufacturers</a></li>
          <ul><a href="<%= employees_path %>" class="indigo-text text-darken-4">The Team</a></li>
@@ -40,12 +43,19 @@
 
       <footer class="footer indigo lighten-5 ">
       <div class="contacts indigo-text text-lighten-2">
-       <a class="email amber-text text-lighten-2" href="mailto:quotes@wcltg.com">QUOTES@WCLTG.COM </a>      239.390.1004   |   25241 ELEMENTARY WAY, SUITE 103. <br>BONITA SPRINGS, FL 34135
+       <a class="email amber-text text-lighten-2" href="mailto:<%=Company.last.email%>"><%=Company.last.email.upcase%> </a>      
+       <%array = Company.last.phone.split('')%>
+       <%array.insert(3, ".")%>
+       <%array.insert(7, ".")%>
+       <%=array.join%>
+
+          |   <%=Company.last.address%>
       </div>
 
       </footer>
 
     </div>
+    
     <%= yield %>
   </body>
 </html>
