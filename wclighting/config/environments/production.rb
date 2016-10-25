@@ -2,14 +2,22 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
 #Paperclip for saving files to Amazon S3.
+  # config.paperclip_defaults = {
+  #   :storage => :s3,
+  #   :s3_credentials => {
+  #     :bucket => ENV['wclwebsite'],
+  #     :access_key_id => ENV['AKIAIWYJ72W3GHDHIMPQ'],
+  #     :secret_access_key => ENV['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']
+  #   }
+  # }
   config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_credentials => {
-      :bucket => ENV['wclwebsite'],
-      :access_key_id => ENV['AKIAIWYJ72W3GHDHIMPQ'],
-      :secret_access_key => ENV['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']
-    }
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['AWS_BUCKET'],
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
+}
   # Settings specified here will take precedence over those in config/application.rb.
 
 
