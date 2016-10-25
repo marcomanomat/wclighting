@@ -23,10 +23,10 @@ class Company < ApplicationRecord
 	has_attached_file :img, required: false,
               :style => { :medium => "300x300>", :thumb => "100x100>" },
             :storage => :s3,
-            :bucket  => ENV['MY_BUCKET_NAME'],
+            :bucket  => 'wclwebsite',
             :s3_credentials => {
-                    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-                    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+                    :access_key_id => 'AKIAIWYJ72W3GHDHIMPQ',
+                    :secret_access_key => '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'
                 },
                 :s3_permissions => 'private',
                 :url => ":s3_domain_url"
