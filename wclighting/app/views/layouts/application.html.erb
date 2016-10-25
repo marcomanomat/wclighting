@@ -16,8 +16,9 @@
       <div class="login">
       <% if admin_signed_in? %>
         <%= link_to('Logout', destroy_admin_session_path, :method=>'delete') %>
-        <%= link_to('Edit Company', "/about/#{Company.last.id}/edit") %>
-          <%if Company.all == [] %>
+          <%if Company.all.any?%>
+            <%= link_to('Edit Company', "/about/#{Company.last.id}/edit") %>
+          <%else%>
             <%= link_to('Initial Setup', new_company_path) %>
           <%end%>        
       <% else %>
