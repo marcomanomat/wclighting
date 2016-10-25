@@ -27,6 +27,14 @@ class Company < ApplicationRecord
                                     :content_type => /^image\/(png|gif|jpeg)/,
                                     :message => 'only (png/gif/jpeg) images',
                                     :size => { in: 0..2.megabytes }
+                                    :storage => :s3,
+                                    :bucket  => ENV['MY_BUCKET_NAME'],
+                                    :s3_credentials => {
+                                            :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+                                            :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+                                        },
+                                        :s3_permissions => 'private',
+                                        :url => ":s3_domain_url"                                
 
 	accepts_nested_attributes_for :images, :allow_destroy => true                                   
 end
