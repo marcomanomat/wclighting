@@ -12,11 +12,11 @@
 
   <body>
 
-   <div class="side-nav fixed indigo lighten-5 z-depth-2" style="text-align:center;">
+   <div class="side-nav fixed indigo lighten-5 z-depth-2 hide-on-med-and-down" style="text-align:center;">
       <div class="login">
       <% if admin_signed_in? %>
         <%= link_to('Logout', destroy_admin_session_path, :method=>'delete') %>
-        <%= link_to('Edit Company', '/companies/5/edit') %>
+        <%= link_to('Edit Company', "/about/#{Company.last.id}/edit") %>
           <%if Company.all == [] %>
             <%= link_to('Initial Setup', new_company_path) %>
           <%end%>        
@@ -43,12 +43,19 @@
 
       <footer class="footer indigo lighten-5 ">
       <div class="contacts indigo-text text-lighten-2">
-       <a class="email amber-text text-lighten-2" href="mailto:quotes@wcltg.com">QUOTES@WCLTG.COM </a>      239.390.1004   |   25241 ELEMENTARY WAY, SUITE 103. <br>BONITA SPRINGS, FL 34135
+       <a class="email amber-text text-lighten-2" href="mailto:<%=Company.last.email%>"><%=Company.last.email.upcase%> </a>      
+       <%array = Company.last.phone.split('')%>
+       <%array.insert(3, ".")%>
+       <%array.insert(7, ".")%>
+       <%=array.join%>
+
+          |   <%=Company.last.address%>
       </div>
 
       </footer>
 
     </div>
+    
     <%= yield %>
   </body>
 </html>

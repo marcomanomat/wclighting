@@ -107,6 +107,18 @@ body {
   }
 }
 
+nav {
+    height: 125px;
+    line-height: 125px;
+}
+
+nav .button-collapse i {
+    font-size: 6.8rem;
+    max-height: 456px;
+    line-height: 56px;
+    padding: 15px;
+}
+
 #nav-links {
     a {
       font-size: 1.85em;
