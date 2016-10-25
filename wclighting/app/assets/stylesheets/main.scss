@@ -5,6 +5,10 @@
 // Gainsboro:           #D8DFE7
 // Deep Lemon:          #FFC423
 
+.slide {
+    width: 100%;
+    height: auto;
+} 
 
 #about{
   padding-top: 25px;
@@ -46,7 +50,7 @@
     height: 100%;
     width: 100%;
     background-position: center;
-    background-size:100% auto;
+
     background-repeat: no-repeat;
 }
 
@@ -113,7 +117,9 @@ body {
 
 .parallax-container {
   height: auto;
+
 }
+
 
 .card {  
   img {
@@ -158,6 +164,7 @@ body {
     max-height: 100%;
     width: 100%;
     overflow-y: hidden;
+    background-color: #ffecb3;
 }
 
 //height of modal footer
@@ -166,21 +173,30 @@ body {
 }
 
 .slider .slides li img {
-    height: 50%;
-    width: 50%;
-    background-size: cover;
+    height: auto;
+    width: 68%;
+    max-height: 435px;
+    /* resize: vertical; */
+    padding-top: -240px;
     background-position: center;
 }
 
 .slider .indicators .indicator-item.active {
     background-color: #FFC423;
+
 }
 #profile {
-  display: inline-block;
+    background-color: #ffecb3;
+    position: absolute;
+    right: 0px;
+    width: 32%;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
 }
 
 .manu-logo {
-  max-height: 259px;
+  max-height: 350px;
   max-width: 150px;
 
     background-position: center;
@@ -334,6 +350,10 @@ max-height: 50px;
     z-index: 10;
 }
 
+.modal .modal-footer {
+    height: 65px;
+}
+
 
 .list-all {
     a {
@@ -391,6 +411,12 @@ max-height: 50px;
 [type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
     font-size: .83rem;
     font-weight: 100;
+}
+
+//The Team
+.card.horizontal .card-image img {
+    max-width: 250px;
+    height: auto;
 }
 
 // COLOR PALLETE:
