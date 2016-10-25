@@ -43,6 +43,7 @@
 
       <footer class="footer indigo lighten-5 ">
       <div class="contacts indigo-text text-lighten-2">
+        <%if Company.all.any?%>
        <a class="email amber-text text-lighten-2" href="mailto:<%=Company.last.email%>"><%=Company.last.email.upcase%> </a>      
        <%array = Company.last.phone.split('')%>
        <%array.insert(3, ".")%>
@@ -51,6 +52,9 @@
 
           |   <%=Company.last.address%>
       </div>
+        <%else%>
+        <p>Enter company</p>
+      <%end%>
 
       </footer>
 
