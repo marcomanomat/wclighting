@@ -20,7 +20,7 @@ class Company < ApplicationRecord
 
 	validates :name, :phone, :address, :email, presence: true
 
-	has_attached_file :img, required: false
+	has_attached_file :img, required: false,
               :style => { :medium => "300x300>", :thumb => "100x100>" },
             :storage => :s3,
             :bucket  => 'wclwebsite',
