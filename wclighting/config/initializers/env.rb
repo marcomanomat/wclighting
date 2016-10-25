@@ -1,3 +1,3 @@
-ENV['s3_bucket'] = 'wclwebsite'
-ENV['s3_access_key_id'] = 'AKIAIWYJ72W3GHDHIMPQ'
-ENV['s3_secret_access_key'] = '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'
+ENV['MY_BUCKET_NAME'] = 'wclwebsite'
+ENV['AWS_ACCESS_KEY_ID'] = 'AKIAIWYJ72W3GHDHIMPQ'
+ENV['AWS_SECRET_ACCESS_KEY'] = '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'
