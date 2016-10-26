@@ -75,6 +75,15 @@
     padding-right: 15px;
 }
 
+.slider .indicators {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+}
+
 .chip {
     display: inline-block;
     height: 32px;
