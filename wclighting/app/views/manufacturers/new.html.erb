@@ -28,8 +28,8 @@
   </div>
   <div id="fixtures"> 
   <%= f.collection_check_boxes(:product_type_ids, ProductType.all, :id, :name) %>
-      </div>
-    <% end %>
+  </div>
+
   </div>  
   <%= f.submit 'Upload Manufacturer'%>
   <% @manufacturer.errors.full_messages.each do |msg| %>
