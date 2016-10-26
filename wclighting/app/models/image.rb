@@ -3,11 +3,17 @@ class Image < ApplicationRecord
 	belongs_to :company
 	attr_accessor :delete_image
 
-	has_attached_file :img, 
+	has_attached_file :img, required: false,
 	    :styles => {
       :thumb => "100x100#",
       :small  => "150x150>",
-      :medium => "200x200" }
+      :medium => "200x200" },
+      :storage => :s3,
+      :bucket  => 'wclwebsite',
+      :s3_credentials => {
+              :access_key_id => 'AKIAIWYJ72W3GHDHIMPQ',
+              :secret_access_key => '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'
+          }      
 
 
 
