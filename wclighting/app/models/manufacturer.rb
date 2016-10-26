@@ -30,9 +30,8 @@ class Manufacturer < ApplicationRecord
             :s3_credentials => {
                     :access_key_id => 'AKIAIWYJ72W3GHDHIMPQ',
                     :secret_access_key => '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'
-                },
-                :s3_permissions => 'private',
-                :url => ":s3_domain_url"
+                }
+                
 	has_attached_file :logo, required: false,
                 :style => { :medium => "300x300>", :thumb => "100x100>" },
             :storage => :s3,
@@ -40,10 +39,7 @@ class Manufacturer < ApplicationRecord
             :s3_credentials => {
                     :access_key_id => 'AKIAIWYJ72W3GHDHIMPQ',
                     :secret_access_key => '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'
-                },
-                :s3_permissions => 'private',
-                :url => ":s3_domain_url"
-
+                }
   validates_attachment_content_type :logo,
                                     :content_type => /^image\/(png|gif|jpeg)/,
                                     :message => 'only (png/gif/jpeg) images',
