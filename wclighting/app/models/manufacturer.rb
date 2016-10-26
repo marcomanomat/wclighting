@@ -1,7 +1,7 @@
 class Manufacturer < ApplicationRecord
 		# include PgSearch
 	# multisearchable :against => [:]
-  attr_accessor :delete_image
+  attr_accessor :delete_image, :logo_file_name
   before_validation { image.clear if @delete_image }	
 
 
@@ -33,7 +33,7 @@ class Manufacturer < ApplicationRecord
                 },
             :s3_permissions => 'private',
             :url => ":s3_domain_url"
-            
+
 	has_attached_file :logo, required: false,
             :style => { :medium => "300x300>", :thumb => "100x100>" },
             :storage => :s3,
