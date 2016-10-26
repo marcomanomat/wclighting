@@ -28,7 +28,7 @@
 
 
 <div class="fixtures-section center">
-	<h5> Line Card </h5>
+	<h5> Fixtures </h5>
 	<div class="yellow-underline-fixtures"></div><br>
 
 	<form class="filter_form", method="get">
@@ -108,7 +108,11 @@
             </div>
 
             <div class="modal-footer">
-            	   <span style="font-size:175%"><%= manufacturer.name%></span> 
+                    <%manufacturer.product_types.each do |pt|%>
+                  <div class="chip">                    
+                    <%=pt.name%>
+                  </div>
+                  <%end%> 
               <a href="#!" class="modal-action modal-close waves-effect waves-blue btn ">Close</a>
   
                
@@ -158,7 +162,11 @@
             </div>
 
             <div class="modal-footer">
-            	   <span style="font-size:175%;"><a href="<%= manufacturer.website %>"><%= manufacturer.name %></a></span> 
+                    <%manufacturer.product_types.each do |pt|%>
+            	    <div class="chip">                    
+                    <%=pt.name%>
+                  </div>
+                  <%end%> 
               <a href="#!" class="modal-action modal-close waves-effect waves-blue btn ">Close</a>
   
                

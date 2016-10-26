@@ -4,7 +4,7 @@
   <p> You are Editing: </p>
   <h3><%=@product_type.name%></h3>
     <br><br>
-    <%= f.label :name, "Name of Line Card:"%>
+    <%= f.label :name, "Name of Fixture:"%>
     <%= f.text_area(:name, placeholder: @product_type.name ) %>
     <%= f.submit 'Finalize Edit', class: 'btn'%>
     <%= link_to 'Delete', product_type_path(@product_type),
