@@ -1,7 +1,7 @@
 class Manufacturer < ApplicationRecord
 		# include PgSearch
 	# multisearchable :against => [:]
-  attr_accessor :delete_image, :logo_file_name
+  attr_accessor :delete_image
   before_validation { image.clear if @delete_image }	
 
 
@@ -23,7 +23,16 @@ class Manufacturer < ApplicationRecord
 	validates :name, :profile, :website, presence: true
 	validates :name, :website, uniqueness: true
 
-
+  has_attached_file :img, required: false,
+              :style => { :medium => "300x300>", :thumb => "100x100>" },
+            :storage => :s3,
+            :bucket  => 'wclwebsite',
+            :s3_credentials => {
+                    :access_key_id => 'AKIAIWYJ72W3GHDHIMPQ',
+                    :secret_access_key => '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'
+                },
+                :s3_permissions => 'private',
+                :url => ":s3_domain_url"
 	has_attached_file :logo, required: false,
                 :style => { :medium => "300x300>", :thumb => "100x100>" },
             :storage => :s3,
