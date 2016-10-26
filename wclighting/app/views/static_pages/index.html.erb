@@ -39,4 +39,18 @@
           <h1>HI, CREATE YOUR COMPANY!</h1> 
       <%end%> 
     </div> 
-
+ <div class="login" style="position: fixed; bottom:0;">
+      <% if admin_signed_in? %>
+        <%= link_to('Logout', destroy_admin_session_path, :method=>'delete') %>
+          <%if Company.all.any?%>
+            <%= link_to('Edit Company', "/about/#{Company.last.id}/edit") %>
+          <%else%>
+            <%= link_to('Initial Setup', new_company_path) %>
+          <%end%>        
+      <% else %>
+          <%if Admin.all == [] %>
+            <%= link_to('Create Admin', new_admin_path) %>
+          <%end%>        
+        <%= link_to('Admin Login', new_admin_session_path)  %>
+      <% end %> 
+  </div> 
