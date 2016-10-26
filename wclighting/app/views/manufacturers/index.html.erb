@@ -101,7 +101,7 @@
                 <ul class="slides">
                   <% manufacturer.images.each do |image| %> 
                   <li>
-                    <%= image_tag(image.img_file_name)%>
+                    <%= image_tag "https://s3.amazonaws.com/wclwebsite/images/imgs/000/000/030/original/#{image.img_file_name}"%>
                   </li>  
                 <%end%> 
               </div>                    
