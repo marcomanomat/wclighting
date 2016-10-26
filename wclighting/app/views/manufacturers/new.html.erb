@@ -25,9 +25,10 @@
         <%= link_to_add_association 'Add Another Image', f, :images %>
       </div>
     <% end %>
-  </div>
+  </div><br><br>
   <div id="fixtures"> 
-  <%= f.collection_check_boxes(:product_type_ids, ProductType.all, :id, :name) %>
+    <p>Line Card</p>
+    <%= f.collection_check_boxes(:product_type_ids, ProductType.all, :id, :name) %>
   </div>
 
   </div>  

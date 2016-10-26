@@ -20,14 +20,11 @@
 
 <br>
 <%= link_to 'Edit Photos', manufacturer_images_path(@manufacturer) %>
-  </div> <br>
-
-
-
-
-  <%= f.collection_check_boxes(:product_type_ids, ProductType.all, :id, :name) %>
-
-
+  </div> <br><br>
+  <div id="fixtures"> 
+    <p>Line Card</p>
+    <%= f.collection_check_boxes(:product_type_ids, ProductType.all, :id, :name) %>
+  </div>
 </div>     
 
 <% end %>
