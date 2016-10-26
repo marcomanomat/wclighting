@@ -27,9 +27,7 @@
     <% end %>
   </div>
   <div id="fixtures"> 
-    <%= f.fields_for :product_types, ProductType.new do |i| %>
-      <%= render 'product_type_fields', :f => i %>
-
+  <%= f.collection_check_boxes(:product_type_ids, ProductType.all, :id, :name) %>
       </div>
     <% end %>
   </div>  
