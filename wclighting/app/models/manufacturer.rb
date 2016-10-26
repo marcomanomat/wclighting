@@ -31,7 +31,7 @@ class Manufacturer < ApplicationRecord
                     :access_key_id => 'AKIAIWYJ72W3GHDHIMPQ',
                     :secret_access_key => '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'
                 }
-                
+
 	has_attached_file :logo, required: false,
                 :style => { :medium => "300x300>", :thumb => "100x100>" },
             :storage => :s3,
@@ -44,6 +44,11 @@ class Manufacturer < ApplicationRecord
                                     :content_type => /^image\/(png|gif|jpeg)/,
                                     :message => 'only (png/gif/jpeg) images',
                                     :size => { in: 0..2.megabytes }
+
+  validates_attachment_content_type :img,
+                                    :content_type => /^image\/(png|gif|jpeg)/,
+                                    :message => 'only (png/gif/jpeg) images',
+                                    :size => { in: 0..2.megabytes }                                    
 
 	accepts_nested_attributes_for :images, :allow_destroy => true                                   
 end

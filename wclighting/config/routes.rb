@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 	resources :employees
   resources :companies, except: [:show, :destroy], :path => "about"
+  get '/contact_us' => 'companies#contact'
   
   resources :admins, only: [:new, :create]
 
