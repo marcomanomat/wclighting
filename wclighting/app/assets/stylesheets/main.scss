@@ -101,7 +101,7 @@
 html {
   @extend .indigo-text, .text-darken-4;
   font-family: 'Fjalla One', sans-serif;
-  min-width: 300px; 
+  min-width: 195px; 
 }
 
 hr { 
@@ -305,7 +305,7 @@ max-height: 50px;
 
 @media (min-width: 992px) {
     body {
-        padding-left: 300px;
+        padding-left: 195px;
     }
 } 
 
