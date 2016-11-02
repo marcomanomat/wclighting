@@ -2,15 +2,15 @@ class EmployeesController < ApplicationController
 
 	def index
 		@employees = Employee.all
+    @employees = @employees.sort_by {|e| e.last_name.downcase}
 	end
 
-	def show
-		@employee = Employee.find(params[:id])
-	end
+  def new
+    @employee = Employee.new
+  end
 
 	def create
 		@employee =  Employee.new(employee_params)
-		@employee.save
     if @employee.save
       redirect_to "/employees"
     else
@@ -22,6 +22,11 @@ class EmployeesController < ApplicationController
 	def edit
 		@employee = Employee.find(params[:id])
 	end
+
+  def show
+    @employee = Employee.find(params[:id])
+  end
+
 
   def update
   	@employee = Employee.find(params[:id])

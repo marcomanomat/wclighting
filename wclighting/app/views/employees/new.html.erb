@@ -1,0 +1,30 @@
+<div class="form container">
+<%= form_for @employee do |f| %>
+  <div class="col-sm-6">
+    <br><br>
+    <%= f.label :first_name, "First Name:"%>
+    <%= f.text_area(:first_name) %>
+
+    <%= f.label :last_name, "Last Name:"%>    
+    <%= f.text_area(:last_name) %>
+
+    <%= f.label :title, "Title:"%>
+    <%=f.text_area(:title) %>
+
+    <%= f.label :email, "Email:"%>    
+    <%= f.text_area(:email) %>
+
+    <%= f.label :phone, "Phone:"%>
+    <%=f.text_area(:phone) %>    
+  </div>
+
+  <div class="col-sm-6">
+    
+  <%= f.label :img, "Photo"%>
+  <%= f.file_field :img %>
+
+  <br><br>
+
+  <%= f.submit 'Upload Employee'%>
+	<% end %>
+</div>

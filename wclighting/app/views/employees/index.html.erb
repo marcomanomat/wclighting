@@ -27,25 +27,50 @@
 
 
 <div class="container"> 
-  <div class="col s12 m7">
+
     <h2 class="center">The Team</h2>
     <div class="yellow-underline"></div>
-    <div class="card horizontal">
+
+    <% if admin_signed_in? %>
+    <div class="add-new-employee">
+    <%= link_to 'Add New Employee', new_employee_path, class: 'link' %>
+    </div>
+    <% end %>
+<%if @employees %>
+<div class="row">
+      <% @employees.each do |e| %>
+      <div class="col s12 m6">
+    <div class="card horizontal" style="max-width: 435px;">
       <div class="card-image">
-        <img src="http://static.tumblr.com/490c66fcc9bbe5d381a87ab28b087597/pzaghsa/bRRo4f46s/tumblr_static_6b4htqwigtsskc488w0s0sgwc.png">
+        <%= image_tag( e.img, class: "employee-img") %>
       </div>
       <div class="card-stacked">
         <div class="card-content">
-          <h5>Miggy Jordan</h5>
-          <p>Fake Managing Partner</p><br><br>
-          <i>"Talent wins games, but teamwork and intelligence wins championships."</i>
+          <% if admin_signed_in? %>
+          <a href="/employees/<%=e.id%>/edit">Edit</a>
+          <%= link_to 'Delete', employee_path(e),
+                method: :delete,
+                data: {confirm: 'Are you sure you want to delete this employee?'}%>
+          <% end %>
+          <h5><%=e.first_name%> <%=e.last_name%></h5>
+          <i><%=e.title%></i><br><br><br>
+          <%phone_array = e.phone.split('')%>
+          <%phone_array.insert(3, ".")%>
+          <%phone_array.insert(7, ".")%>
+          <p>Phone: <%=phone_array.join%></p>
         </div>
-        <div class="card-action center">
-          <a href="#">fakemj@wcltg.com</a>
+        <div class="card-action center" id="employee-card-bottom" style="line-height: 0px;">
+          <a href="mailto:<%=e.email%>"><%=e.email%></a>
         </div>
       </div>
     </div>
-  </div>
+    </div>
+      <% end %>
+  
+<%else %>
+<p><%=Add Employees%></p>
+<% end %>  
+</div>
 </div>
  <div class="login" style="position: fixed; bottom:0;">
       <% if admin_signed_in? %>
