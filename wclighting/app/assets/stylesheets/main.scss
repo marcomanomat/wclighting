@@ -473,6 +473,21 @@ max-height: 50px;
   }
 }
 
+//Team
+.card.horizontal .card-image img {
+    max-width: 175px;
+    min-width: 175px;
+    max-height: 175px;
+    min-height: 175px;
+}
+
+#employee-card-bottom {
+    position: relative;
+    background-color: #10155E;
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+    padding-top: 5px;
+}
+
 // COLOR PALLETE:
 // Midnight Blue:       #10155E
 // Dark Imperial Blue:  #113D70
