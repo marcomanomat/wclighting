@@ -54,10 +54,10 @@
           <% end %>
           <h5><%=e.first_name%> <%=e.last_name%></h5>
           <i><%=e.title%></i><br><br><br>
-          <%array = e.phone.split('')%>
-          <%array.insert(3, ".")%>
-          <%array.insert(7, ".")%>
-          <p><%=array.join%></p>
+          <%phone_array = e.phone.split('')%>
+          <%phone_array.insert(3, ".")%>
+          <%phone_array.insert(7, ".")%>
+          <p>Phone: <%=phone_array.join%></p>
         </div>
         <div class="card-action center" id="employee-card-bottom" style="line-height: 0px;">
           <a href="mailto:<%=e.email%>"><%=e.email%></a>
