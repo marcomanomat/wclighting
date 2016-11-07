@@ -130,6 +130,10 @@ body {
 }
 
 .side-nav {
+    width: 195px;
+}
+
+#mobile-demo {
     width: 285px;
 }
 
@@ -152,6 +156,14 @@ nav .button-collapse i {
 }
 
 #nav-links {
+    a {
+      font-size: 1.5em;
+      margin: 25px;
+      text-shadow: .5px .5px #FFC423;
+      }
+}
+
+#nav-links-mobile {
     a {
       font-size: 2.75em;
       margin-bottom: 95px;
