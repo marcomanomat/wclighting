@@ -1,5 +1,7 @@
 class CompaniesController < ApplicationController
 
+  before_action :require_admin, only: [:create, :new, :edit, :update, :destroy]
+
   def index
     @companies = Company.all.order('name ASC')
     # binding.pry
@@ -42,6 +44,12 @@ class CompaniesController < ApplicationController
     @company.destroy
     redirect_to "/"
   end
+
+  def require_admin
+    unless admin_signed_in?
+      redirect_to "/"
+    end
+  end  
 
 
 	private

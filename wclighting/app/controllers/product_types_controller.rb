@@ -1,5 +1,7 @@
 class ProductTypesController < ApplicationController
 
+before_action :require_admin, only: [:create, :new, :edit, :update, :destroy]  
+
   def index
     @product_types = ProductType.all.order('name ASC')
     # binding.pry
@@ -39,6 +41,12 @@ class ProductTypesController < ApplicationController
     @product_type.destroy
     redirect_to "/admin_linecard"
   end
+
+  def require_admin
+    unless admin_signed_in?
+      redirect_to "/"
+    end
+  end  
 
 
 	private

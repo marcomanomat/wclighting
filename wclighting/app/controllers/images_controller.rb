@@ -1,5 +1,7 @@
 class ImagesController < ApplicationController
 
+before_action :require_admin, only: [:create, :new, :edit, :update, :destroy]  
+
   def index
     # binding.pry
     @manufacturer = Manufacturer.find(params[:manufacturer_id])
@@ -29,6 +31,12 @@ class ImagesController < ApplicationController
     @image.destroy
     redirect_to "/manufacturers/#{@manufacturer.id}/edit"
   end
+
+  def require_admin
+    unless admin_signed_in?
+      redirect_to "/"
+    end
+  end  
 
 
 	private

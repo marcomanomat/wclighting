@@ -1,5 +1,6 @@
 class ManufacturersController < ApplicationController
-# before_filter :authenticate_admin!, only: [:new, :edit, :destroy]
+
+before_action :require_admin, only: [:create, :new, :edit, :update, :destroy]
 
 	def index
     if params[:product_type].nil?  || params[:product_type][:product_type_ids] == ""
@@ -61,6 +62,12 @@ class ManufacturersController < ApplicationController
     @manufacturer.destroy
     redirect_to "/manufacturers"
   end
+
+  def require_admin
+    unless admin_signed_in?
+      redirect_to "/"
+    end
+  end  
 
 
 	private
