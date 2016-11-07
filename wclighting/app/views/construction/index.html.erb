@@ -50,14 +50,24 @@
       <div id="nav-links">
          <ul><a href="#" class="indigo-text text-darken-4">About</a></li>
         <ul><a href="#" class="indigo-text text-darken-4">Line Card</a></li>
-         <ul><a href="#" class="indigo-text text-darken-4">Manufacturers</a></li>
+         <ul><a href="#" class="indigo-text text-darken-4">Contact Us</a></li>
          <ul><a href="#" class="indigo-text text-darken-4">Our Team</a></li>
       </div> 
 
-      <footer class="footer indigo lighten-5 ">
-      <div class="contacts indigo-text text-lighten-4">
-       <a class="email amber-text text-lighten-2" href="mailto:quotes@wcltg.com">QUOTES@WCLTG.COM </a>      239.390.1004   |   25241 ELEMENTARY WAY, SUITE 103. <br>BONITA SPRINGS, FL 34135
+      <footer class="footer indigo lighten-5 " style="padding: 15px">
+      <div class="contacts indigo-text text-lighten-2">
+        <%if Company.all.any?%>
+       <a class="email amber-text text-lighten-2" href="mailto:<%=Company.last.email%>"><%=Company.last.email.upcase%> </a>      
+       <%array = Company.last.phone.split('')%>
+       <%array.insert(3, ".")%>
+       <%array.insert(7, ".")%>
+       <span style="font-size: 14px"><%=array.join%></span><br><br>
+       <span style="font-size: 11.72px"><%=Company.last.address%></span><br>
       </div>
+        <%else%>
+        Enter company</span>
+      <%end%>
+
       </footer>
 
     </div>
