@@ -3,20 +3,17 @@ $( document ).ready( function(){
   $( '.button-collapse' ).sideNav({
     closeOnClick: true,
     edge: 'right'
-  });
+    }
+  );
 
   $( '.parallax' ).parallax();
 
 $('.slider').slider({
-			full_width: false,
-			height: 745,
+			full_width: true,
     }
   );			
 
-$('.carousel.carousel-slider').carousel({
-  full_width: true
-  }
-);
+
 
 $('.modal-trigger').leanModal({
       starting_top: '1%',
