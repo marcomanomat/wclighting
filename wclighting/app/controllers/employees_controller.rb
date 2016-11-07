@@ -1,5 +1,7 @@
 class EmployeesController < ApplicationController
 
+before_action :require_admin, only: [:create, :new, :edit, :update, :destroy]
+
 	def index
 		@employees = Employee.all
     @employees = @employees.sort_by {|e| e.last_name.downcase}
@@ -39,6 +41,13 @@ class EmployeesController < ApplicationController
     @employee.destroy
     redirect_to "/employees"
   end
+
+  def require_admin
+    unless admin_signed_in?
+      redirect_to "/"
+    end
+  end
+
 
 
 	private

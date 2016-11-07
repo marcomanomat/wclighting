@@ -1,5 +1,6 @@
 class AdminsController < ApplicationController
 
+before_action :require_admin, only: [:create, :new, :edit, :update, :destroy]  
 
 	def index
 		@admins = Admin.all
@@ -38,6 +39,12 @@ class AdminsController < ApplicationController
     @admin.destroy
     redirect_to "/"
   end
+
+  def require_admin
+    unless admin_signed_in?
+      redirect_to "/"
+    end
+  end  
 
 
 	private
