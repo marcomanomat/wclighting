@@ -493,6 +493,10 @@ max-height: 50px;
    z-index: 10;
 }
 
+div #sidenav-overlay {
+  z-index: 9;
+}
+
 // COLOR PALLETE:
 // Midnight Blue:       #10155E
 // Dark Imperial Blue:  #113D70
