@@ -12,37 +12,20 @@
 
   <body>
 
-  <div class="side-nav fixed indigo lighten-5 z-depth-2 hide-on-med-and-down" style="text-align:center; opacity:.755;">
+<nav>
+  <div class="nav-wrapper indigo lighten-5 z-depth-0 hide-on-med-and-down;" style="opacity:.755;">
      
-    <%= image_tag "Logo", style:'width:auto; height:175px; margin-top: 50px;' %>
-      <div id="nav-links">
-         <ul><a href="/about" class="indigo-text text-darken-4">About</a></li>
-        <ul><a href="/manufacturers" class="indigo-text text-darken-4">Line Card</a></li>
-         <ul><a href="<%= contact_us_path %>" class="indigo-text text-darken-4">Contact Us</a></li>
-         <ul><a href="<%= employees_path %>" class="indigo-text text-darken-4">The Team</a></li>
-      </div>
-      <script src="http://code.jquery.com/jquery-latest.min.js"></script> 
-<!-- Compiled and minified JavaScript --> 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script> 
-      <script>
-       $(".button-collapse").sideNav();
-      </script>  
+    <%= image_tag "Logo", style:"width:auto;height: 120.5px;margin-top: -38px; padding-left: 152px;"%>
+      <ul id="nav-links" class="right">
+         <li><a href="/about" class="indigo-text text-darken-4">ABOUT</a></li>
+        <li><a href="/manufacturers" class="indigo-text text-darken-4">LINE CARD</a></li>
 
-      <footer class="footer indigo lighten-5 " style="padding: 15px">
-      <div class="contacts indigo-text text-lighten-2">
-        <%if Company.all.any?%>
-       <a class="email amber-text text-lighten-2" href="mailto:<%=Company.last.email%>"><%=Company.last.email.upcase%> </a>      
-       <%array = Company.last.phone.split('')%>
-       <%array.insert(3, ".")%>
-       <%array.insert(7, ".")%>
-       <span style="font-size: 14px"><%=array.join%></span><br><br>
-       <span style="font-size: 11.72px"><%=Company.last.address%></span><br>
-      </div>
-        <%else%>
-        Enter company</span>
-      <%end%>
+         <li><a href="<%= contact_us_path %>" class="indigo-text text-darken-4">CONTACT US</a></li>
+         <li><a href="<%= employees_path %>" class="indigo-text text-darken-4">THE TEAM</a></li>
+      </ul>
+</nav>
 
-      </footer>
+
   </div>
     
     <%= yield %>

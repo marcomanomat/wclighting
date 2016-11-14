@@ -28,7 +28,7 @@
 
 <div class="container"> 
 
-    <h2 class="center">The Team</h2>
+    <h2 class="center" style="padding-top: 85px">THE TEAM</h2>
     <div class="yellow-underline"></div>
 
     <% if admin_signed_in? %>
@@ -37,7 +37,7 @@
     </div>
     <% end %>
 <%if @employees %>
-<div class="row">
+<div class="row" style="padding-top: 15px">
       <% @employees.each do |e| %>
       <div class="col s12 m6">
     <div class="card horizontal" style="max-width: 435px;">
