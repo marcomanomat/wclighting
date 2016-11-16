@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html>
+
   <head>
     <title>West Coast Lighting</title>
     <%= csrf_meta_tags %>
@@ -12,23 +13,59 @@
 
   <body>
 
-<nav>
-  <div class="nav-wrapper indigo lighten-5 z-depth-0 hide-on-med-and-down;" style="opacity:.755; z-index: 10;">
-     
-    <%= image_tag "Logo", style:"width:auto;height: 120.5px;margin-top: -38px; padding-left: 152px;"%>
-      <ul id="nav-links" class="right">
-         <li><a href="/about" class="indigo-text text-darken-4">ABOUT</a></li>
-        <li><a href="/manufacturers" class="indigo-text text-darken-4">LINE CARD</a></li>
+      <div class="navbar hide-on-med-and-down">
+        <nav>
+          <div class="nav-wrapper indigo lighten-5 z-depth-0 hide-on-med-and-down;" style="opacity:.755; z-index: 10;">
+           
+          <%= image_tag "Logo", style:"width:auto;height: 135.5px; margin-top: -38px; padding-left: 152px;"%>
+            <ul id="nav-links" class="right">
+               <li><a href="/static_pages#about-logo" class="indigo-text text-darken-4">ABOUT</a></li>
+               <li><a href="/static_pages#contact_us" class="indigo-text text-darken-4">CONTACT US</a></li>
+              <li><a href="/manufacturers" class="indigo-text text-darken-4">LINE CARD</a></li>
 
-         <li><a href="<%= contact_us_path %>" class="indigo-text text-darken-4">CONTACT US</a></li>
-         <li><a href="<%= employees_path %>" class="indigo-text text-darken-4">THE TEAM</a></li>
-      </ul>
-</nav>
+               <li><a href="<%= employees_path %>" class="indigo-text text-darken-4">THE TEAM</a></li>
+            </ul>
+           </div>
+        </nav>
+      </div>
 
 
-  </div>
+<div class="navbar z-depth-1 hide-on-large-only" id="topbar">
+     <nav>
+       <div class="nav-wrapper indigo lighten-5 ">
+         <a href="/" class="brand-logo indigo-text text-darken-4 hide-on-large-only hide-on-small-only"><%= image_tag "WCLogo", style:'max-width:690px; height:auto' %></a>
+         <a href="/" class="brand-logo indigo-text text-darken-4 hide-on-med-and-up"><%= image_tag "WCLogoS", style:'width:auto; max-height:55px' %></a>
+         <a href="#" data-activates="mobile-demo" class="right button-collapse yellow-text text-darken-3">
+            <i class="material-icons">menu</i>
+          </a>
+         <ul class="right hide-on-med-and-down" style='width: auto !important;'>
+    <%= image_tag "Logo", style:'width:auto; height:290px' %>
+      <div id="nav-links">
+         <ul><a href="/about" class="indigo-text text-darken-4">About</a></li>
+        <ul><a href="/manufacturers"class="indigo-text text-darken-4">Line Card</a></li>
+         <ul><a href="<%= contact_us_path %>#manufacturers" class="indigo-text text-darken-4">Contact Us</a></li>
+         <ul><a href="<%= employees_path %>" class="indigo-text text-darken-4">Our Team</a></li>
+      </div> 
+      </div> 
+         <ul class="side-nav indigo lighten-5 z-depth-2" id="mobile-demo" style:'width: auto !important;'>
+    <%= image_tag "Logo", style:'width:auto; height:290px' %>
+      <div id="nav-links">
+         <ul><a href="/about" class="indigo-text text-darken-4">About</a></li>
+        <ul><a href="/manufacturers" class="indigo-text text-darken-4">Line Card</a></li>
+         <ul><a href="<%= contact_us_path %>#manufacturers" class="indigo-text text-darken-4">Contact Us</a></li>
+         <ul><a href="<%= employees_path %>"  class="indigo-text text-darken-4">Our Team</a></li>
+      </div>
+    </div>
+    </ul>
+    </nav>
+</div>      
     
     <%= yield %>
+
   </body>
+
+
+
+
 </html>
 
