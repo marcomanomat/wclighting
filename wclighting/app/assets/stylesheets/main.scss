@@ -97,6 +97,7 @@
     right: 0;
     bottom: 0;
     margin: 0;
+    line-height: 35px;
 }
 
 .chip {
@@ -159,7 +160,7 @@ body {
 }
 
 nav {
-    height: 95px;
+    height: 78px;
     background-color: transparent;
     //line-height: 125px;
 }
@@ -174,13 +175,13 @@ nav .button-collapse i {
 nav .nav-wrapper {
   position: relative;
   height: 100%;
-  margin-top: 22px;
+  margin-top: 29px;
 }
 
 #nav-links {
     a {
-      font-size: 1.15em;
-      margin-top: 17px;     
+      font-size: 1.35em;
+      margin-top: 10px;     
       text-shadow: .5px .5px #FFC423;
       }
 }
@@ -223,6 +224,11 @@ nav .nav-wrapper {
 }
 
 #manufacturers {
+  min-height: 1.5px;
+  max-width: 100%;
+}
+
+#index-line {
   min-height: 1.5px;
   max-width: 100%;
 }
@@ -314,6 +320,7 @@ h4 {
   .card-manu {
     width:190px;
     height:190px;
+    opacity: .9;
   }
 
 .card .card-action {
@@ -344,14 +351,12 @@ max-height: 50px;
 
 
 
-.footer {
-   position: fixed;     
-   text-align: center;    
-   bottom: 60px; 
-   width: 100%;
+.footer-copyright {
+
     .contacts {
-       font-size: .95em;
+       font-size: 95px;
        text-shadow: .29px .29px #10155E;
+       line-height: 1px;
     }
 }
 
@@ -574,6 +579,16 @@ max-height: 50px;
 #return-to-top:hover i {
     color: #FFC423;
     top: 5px;
+}
+
+footer.page-footer {
+    margin-top: 20px;
+     padding-top: 0px; 
+    background-color: #10155E;
+}
+
+footer.page-footer .footer-copyright {
+    line-height: 27px;
 }
 
 

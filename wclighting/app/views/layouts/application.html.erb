@@ -17,10 +17,10 @@
         <nav>
           <div class="nav-wrapper indigo lighten-5 z-depth-0 hide-on-med-and-down;" style="opacity:.755; z-index: 10;">
            
-          <%= image_tag "Logo", style:"width:auto;height: 135.5px; margin-top: -38px; padding-left: 152px;"%>
+          <%= image_tag "Logo", style:"width:auto;height: 123.5px; margin-top: -41px; padding-left: 172px;"%>
             <ul id="nav-links" class="right">
                <li><a href="/static_pages#about-logo" class="indigo-text text-darken-4">ABOUT</a></li>
-               <li><a href="/static_pages#contact_us" class="indigo-text text-darken-4">CONTACT US</a></li>
+               <li><a href="/static_pages#index-line" class="indigo-text text-darken-4">CONTACT US</a></li>
               <li><a href="/manufacturers" class="indigo-text text-darken-4">LINE CARD</a></li>
 
                <li><a href="<%= employees_path %>" class="indigo-text text-darken-4">THE TEAM</a></li>
@@ -58,11 +58,43 @@
     </div>
     </ul>
     </nav>
-</div>      
+</div> 
+
     
     <%= yield %>
 
   </body>
+
+<footer class="page-footer">
+  
+  <div class="footer-copyright">
+      <div class="center contacts indigo-text text-lighten-2">
+        <%if Company.all.any?%>
+       <a class="email amber-text text-lighten-2" style="font-size:14px; padding: 15px"href="mailto:<%=Company.last.email%>"><%=Company.last.email.upcase%> </a>      
+       <%array = Company.last.phone.split('')%>
+       <%array.insert(3, ".")%>
+       <%array.insert(7, ".")%>
+       <span class="amber-text text-lighten-1"style="font-size: 14px; padding: 15px"><%=array.join%></span>
+       <span class="amber-text text-lighten-2" style="font-size: 14px; padding: 15px"><%=Company.last.address%></span>
+
+      </div>
+       <span class="right indigo-text text-darken-1"style="font-size: 14px; padding: 15px">© 
+
+          <script language="JavaScript" type="text/javascript">
+          now = new Date
+          theYear=now.getYear()
+          if (theYear < 1900)
+          theYear=theYear+1900
+          document.write(theYear)
+          </script> 
+
+       West Coast Lighting</span>      
+        <%else%>
+        Enter company</span>
+      <%end%>
+
+  </div>
+</footer>
 
 
 
