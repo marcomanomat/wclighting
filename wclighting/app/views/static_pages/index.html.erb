@@ -1,17 +1,18 @@
-<div class="full" id="a">
+<div>
     <div class="slider">
       <ul class="slides">
         <%if Company.last%>
           <% Company.last.images.each do |image| %> 
-          <li>
-            <div class="parallax"><%= image_tag(image.img_file_name)%>
-            </div>
-          </li>
-          <%end%> 
-        <%else%>
+        <li class="parallax">
+                <%= image_tag("image.img_file_name") %>
+        </li>
+              <%end%> 
+           <%else%>
           <h1>HI, CREATE YOUR COMPANY!</h1> 
-      <%end%> 
+        <%end%> 
+      </ul>  
     </div> 
+</div>  
 
 
 <div>
