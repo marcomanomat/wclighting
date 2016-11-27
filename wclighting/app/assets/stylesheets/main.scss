@@ -33,13 +33,21 @@
 }
 
 .parallax {
-    filter: brightness(75%);
+    filter: brightness(65%);
+    width: 100%;
+}
+
+.yo {
+    filter: brightness(65%);
 }
 
 .slider {
   width: 100%;
   height: 100%;
   margin: 0 auto;
+  position: initial;
+  min-height: 660px;
+
 }
  .slider .slides {
     background-color: transparent;
@@ -47,9 +55,10 @@
     height: 900px;
 }
 
+
 .slider .indicators {
   bottom: 60px;
-  z-index: 100;
+  z-index: 2;
   /* text-align: left; */
 }
 
@@ -70,6 +79,10 @@
     background-repeat: no-repeat;
 }
 
+.slider .slides li {
+    height: initial;
+}    
+
 //manufacturer line card position
 [type="checkbox"] + label {
     position: relative;
@@ -84,6 +97,7 @@
     right: 0;
     bottom: 0;
     margin: 0;
+    line-height: 35px;
 }
 
 .chip {
@@ -146,7 +160,7 @@ body {
 }
 
 nav {
-    height: 77px;
+    height: 78px;
     background-color: transparent;
     //line-height: 125px;
 }
@@ -161,13 +175,13 @@ nav .button-collapse i {
 nav .nav-wrapper {
   position: relative;
   height: 100%;
-  margin-top: 22px;
+  margin-top: 29px;
 }
 
 #nav-links {
     a {
       font-size: 1.35em;
-      margin-top: 9px;     
+      margin-top: 10px;     
       text-shadow: .5px .5px #FFC423;
       }
 }
@@ -183,6 +197,10 @@ nav .nav-wrapper {
 .parallax-container {
   height: auto;
 
+}
+
+.parallax-construction-container {
+    height: 810px;
 }
 
 
@@ -206,6 +224,11 @@ nav .nav-wrapper {
 }
 
 #manufacturers {
+  min-height: 1.5px;
+  max-width: 100%;
+}
+
+#index-line {
   min-height: 1.5px;
   max-width: 100%;
 }
@@ -273,8 +296,9 @@ html {
     line-height: 0.84;
     font-weight: 120;
     text-shadow: .5px .5px #FFC423;
-
 }
+
+
 
 // manufacturer stuff
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
@@ -296,6 +320,7 @@ h4 {
   .card-manu {
     width:190px;
     height:190px;
+    opacity: .9;
   }
 
 .card .card-action {
@@ -326,14 +351,12 @@ max-height: 50px;
 
 
 
-.footer {
-   position: fixed;     
-   text-align: center;    
-   bottom: 60px; 
-   width: 100%;
+.footer-copyright {
+
     .contacts {
-       font-size: .95em;
+       font-size: 95px;
        text-shadow: .29px .29px #10155E;
+       line-height: 1px;
     }
 }
 
@@ -513,6 +536,61 @@ max-height: 50px;
 #sidenav-overlay {
   z-index: 1;
 }
+
+
+//scroll back up!
+
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #10155E;
+    background: rgba(0, 0, 55, 0.4);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top i {
+    color: white;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top:hover {
+    background: rgba(0, 0, 55, 0.4);
+}
+#return-to-top:hover i {
+    color: #FFC423;
+    top: 5px;
+}
+
+footer.page-footer {
+    margin-top: 20px;
+     padding-top: 0px; 
+    background-color: #10155E;
+}
+
+footer.page-footer .footer-copyright {
+    line-height: 27px;
+}
+
 
 // COLOR PALLETE:
 // Midnight Blue:       #10155E

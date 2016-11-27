@@ -1,50 +1,79 @@
-
-<div class="navbar z-depth-1 hide-on-large-only" id="topbar">
-     <nav>
-       <div class="nav-wrapper indigo lighten-5 ">
-         <a href="/" class="brand-logo indigo-text text-darken-4 hide-on-large-only hide-on-small-only"><%= image_tag "WCLogo", style:'max-width:690px; height:auto' %></a>
-         <a href="/" class="brand-logo indigo-text text-darken-4 hide-on-med-and-up"><%= image_tag "WCLogoS", style:'width:auto; max-height:55px' %></a>
-         <a href="#" data-activates="mobile-demo" class="right button-collapse yellow-text text-darken-3">
-            <i class="material-icons">menu</i>
-          </a>
-         <ul class="right hide-on-med-and-down" style='width: auto !important;'>
-    <%= image_tag "Logo", style:'width:auto; height:290px' %>
-      <div id="nav-links">
-         <ul><a href="/about" class="indigo-text text-darken-4">About</a></li>
-        <ul><a href="/manufacturers"class="indigo-text text-darken-4">Line Card</a></li>
-         <ul><a href="<%= contact_us_path %>#manufacturers" class="indigo-text text-darken-4">Contact Us</a></li>
-         <ul><a href="<%= employees_path %>" class="indigo-text text-darken-4">Our Team</a></li>
-      </div> 
-      </div> 
-         <ul class="side-nav indigo lighten-5 z-depth-2" id="mobile-demo" style:'width: auto !important;'>
-    <%= image_tag "Logo", style:'width:auto; height:290px' %>
-      <div id="nav-links">
-         <ul><a href="/about" class="indigo-text text-darken-4">About</a></li>
-        <ul><a href="/manufacturers" class="indigo-text text-darken-4">Line Card</a></li>
-         <ul><a href="<%= contact_us_path %>#manufacturers" class="indigo-text text-darken-4">Contact Us</a></li>
-         <ul><a href="<%= employees_path %>"  class="indigo-text text-darken-4">Our Team</a></li>
-      </div>
-    </div>
-    </ul>
-    </nav>
-
-
-<div class="full" id="a">
-    <div class="slider fullscreen">
+<div>
+    <div class="slider">
       <ul class="slides">
         <%if Company.last%>
           <% Company.last.images.each do |image| %> 
-          <li>
-            <div class="parallax"><%= image_tag(image.img_file_name)%>
-            </div>
-          </li>
-          <%end%> 
-        <%else%>
+        <li class="parallax">
+                <%= image_tag("image.img_file_name") %>
+        </li>
+              <%end%> 
+           <%else%>
           <h1>HI, CREATE YOUR COMPANY!</h1> 
-      <%end%> 
+        <%end%> 
+      </ul>  
     </div> 
+</div>  
 
-  </body>
+<div>
+  <div class="container" style="padding-top: 103px; padding-bottom: 85px">
+        <div id="about-logo">
+        <%= image_tag "Logo", style:'width:auto; height:auto' %>
+        </div>  
+        <p class="flow-text">
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.
+         </p>
+         <p class="flow-text">
+          Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+        </p>
+        <p class="flow-text">
+        Have any more questions? Feel free to email us at <a href="quotes@wcltg.com">quotes@wcltg.com</a>
+        </p><br>            
+    </div>     
+</div>
+
+
+<hr id="index-line">
+
+
+<div>
+  <div class="contact container" style="padding-top: 45px">
+      <h2 class="center" id="contact_us">CONTACT US</h2>
+      <div class="yellow-underline"></div>
+
+      <p class="flow-text" style="padding-top: 35px;">Do you have an upcoming project and need reliable lighting design services?</p>
+      <p class="flow-text">We are happy to answer any questions you may have about our company, designers, completed projects or productions services we provide. </p><br>
+      <p class="flow-text" style="font-size: 16.5px">Address: <%=Company.last.address%></p>
+       <%array = Company.last.phone.split('')%>
+       <%array.insert(3, ".")%>
+       <%array.insert(7, ".")%>
+       <p class="flow-text"style="font-size: 16.5px">Phone: <%=array.join%></p>
+
+      <p class="flow-text"style="font-size: 16.5px">
+      <a href="mailto:quotes@wcltg.com">Quotes@wcltg.com</a>
+      </p>
+
+      <p class="flow-text"style="font-size: 16.5px">
+      <a href="mailto:designs@wcltg.com">Designs@wcltg.com</a>
+      </p>
+
+      <p class="flow-text"style="font-size: 16.5px">
+      <a href="mailto:sales@wcltg.com">Sales@wcltg.com</a>
+      </p>
+
+      <p class="flow-text"style="font-size: 16.5px">
+      <a href="mailto:orders@wcltg.com">Orders@wcltg.com</a>
+      </p>
+
+      <p class="flow-text"style="font-size: 16.5px">
+      <a href="mailto:support@wcltg.com">Support@wcltg.com</a>
+      </p>                                                      
+            
+    </div>  
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+<a href="#" id="return-to-top"><i class="medium material-icons">navigation</i></a>
+
     
-</html>      
+
 
