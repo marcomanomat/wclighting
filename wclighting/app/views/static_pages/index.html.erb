@@ -4,7 +4,7 @@
         <%if Company.last%>
           <% Company.last.images.each do |image| %> 
         <li class="parallax">
-                <%= image_tag("image.img_file_name") %>
+                <%= image_tag(image.img_file_name) %>
         </li>
               <%end%> 
            <%else%>
