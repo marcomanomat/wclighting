@@ -1,14 +1,18 @@
 <div class = "all">
 
-    <div class="slider main-slider">
+    <div class="slider" id="main-slider">
       <ul class="slides">
+        <%if Company.last%>
+          <% Company.last.images.each do |image| %> 
         <li class="parallax">
-                <%= image_tag("CancerCenter") %>
+                <%= image_tag(image.img_file_name) %>
         </li>
+              <%end%> 
+           <%else%>
+          <h1>HI, CREATE YOUR COMPANY!</h1> 
+        <%end%> 
       </ul>  
-
-    </div>  
-
+    </div> 
 
 
   <div class="container about" style="padding-top: 103px; padding-bottom: 85px">
