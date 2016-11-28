@@ -1,23 +1,17 @@
 <div class = "all">
-<div>
-    <div class="slider">
+
+    <div class="slider main-slider">
       <ul class="slides">
-        <%if Company.last%>
-          <% Company.last.images.each do |image| %> 
         <li class="parallax">
-                <%= image_tag(image.img_file_name) %>
+                <%= image_tag("CancerCenter") %>
         </li>
-              <%end%> 
-           <%else%>
-          <h1>HI, CREATE YOUR COMPANY!</h1> 
-        <%end%> 
       </ul>  
-    </div> 
-</div>  
+
+    </div>  
 
 
-<div>
-  <div class="container" style="padding-top: 103px; padding-bottom: 85px">
+
+  <div class="container about" style="padding-top: 103px; padding-bottom: 85px">
         <div id="about-logo">
         <%= image_tag "Logo", style:'width:auto; height:auto' %>
         </div>  
@@ -31,13 +25,13 @@
         Have any more questions? Feel free to email us at <a href="quotes@wcltg.com">quotes@wcltg.com</a>
         </p><br>            
     </div>     
-</div>
+
 
 
 <hr id="index-line">
 
 
-<div>
+
   <div class="contact container" style="padding-top: 45px">
       <h2 class="center" id="contact_us">CONTACT US</h2>
       <div class="yellow-underline"></div>
@@ -71,8 +65,7 @@
       </p>                                                      
             
     </div>  
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-</div>
+  <br><br>
 
 </div>
 
