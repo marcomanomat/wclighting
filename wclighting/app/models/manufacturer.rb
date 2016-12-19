@@ -28,8 +28,8 @@ class Manufacturer < ApplicationRecord
             :storage => :s3,
             :bucket  => 'wclwebsite',
             :s3_credentials => {
-                    :access_key_id => 'AKIAIWYJ72W3GHDHIMPQ',
-                    :secret_access_key => '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'
+                :access_key_id => 'AKIAJTQ3Y3YZSORTT7OA',
+                :secret_access_key => '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'
                 }
 
 	has_attached_file :logo, required: false,
@@ -37,8 +37,8 @@ class Manufacturer < ApplicationRecord
             :storage => :s3,
             :bucket  => 'wclwebsite',
             :s3_credentials => {
-                    :access_key_id => 'AKIAIWYJ72W3GHDHIMPQ',
-                    :secret_access_key => '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'
+                :access_key_id => 'AKIAJTQ3Y3YZSORTT7OA',
+                :secret_access_key => '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'
                 }
   validates_attachment_content_type :logo,
                                     :content_type => /^image\/(png|gif|jpeg)/,
