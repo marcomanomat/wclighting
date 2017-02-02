@@ -15,12 +15,17 @@
   </head>
 
   <body>
+      <div class="phonespace">
+          <p class="phone" align="right">
+            p: 239.390.1004
+          </p>
+      </div>
 
       <div class="navbar hide-on-med-and-down">
         <nav>
           <div class="nav-wrapper indigo lighten-5 z-depth-0 hide-on-med-and-down;" style="opacity:.755; z-index: 10;">
            <%= link_to '/' do %>
-          <%= image_tag "Logo", style:"width:auto;height: 123.5px; margin-top: -41px; padding-left: 172px;"%>
+          <%= image_tag "Logo", style:"width:auto;height: 123.5px; margin-top: -12px; padding-left: 172px;"%>
           <% end %>
             <ul id="nav-links" class="right">
                <li><a href="/#about-logo" class="indigo-text text-darken-4">ABOUT</a></li>
@@ -74,7 +79,7 @@
   <div class="footer-copyright">
       <div class="center contacts indigo-text text-lighten-2">
         <%if Company.all.any?%>
-       <a class="email amber-text text-lighten-2" style="font-size:14px; padding: 15px"href="mailto:<%=Company.last.email%>"><%=Company.last.email.upcase%> </a>      
+       <a class="email amber-text text-lighten-2" style="font-size:14px; padding: 15px"href="http://wcltg.com"><%="WCLTG.COM"%> </a>      
        <%array = Company.last.phone.split('')%>
        <%array.insert(3, ".")%>
        <%array.insert(7, ".")%>
