@@ -16,7 +16,7 @@
 
   <body>
 
-
+<% unless controller_name == "static_pages" %>
       <div class="navbar2">
         <nav id="nav2">
           <div class="nav-wrapper2" style="z-index: 10;" align="right">
@@ -24,7 +24,15 @@
       </div>
            </div>
         </nav>
-      </div>      
+      </div>  
+
+      <%else%>
+      <div class="phonespace">
+          <p class="phone" align="right">
+            p: 239.390.1004
+          </p>
+      </div>          
+<% end %>
 
       <div class="navbar hide-on-med-and-down">
         <nav>
