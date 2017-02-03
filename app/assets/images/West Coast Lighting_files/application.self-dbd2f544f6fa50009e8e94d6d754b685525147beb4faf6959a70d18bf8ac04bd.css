@@ -4555,7 +4555,8 @@ input[type=range] + .thumb {
   }
   /* line 122, /Users/marcomanomat/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/materialize-sass-0.97.7/app/assets/stylesheets/materialize/components/_grid.scss */
   .row .col.l3 {
-    width: 25%;
+    height: 190px;
+    max-width: 25%;
     margin-left: auto;
     left: auto;
     right: auto;
