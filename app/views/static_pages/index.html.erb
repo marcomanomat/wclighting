@@ -39,68 +39,6 @@
         </p><br>            
     </div>     
 
-
-
-<hr id="index-line">
-
-
-
-  <div class="contact container" style="padding-top: 15px">
-      <h2 class="center" id="contact_us">CONTACT US</h2>
-      <div class="yellow-underline"></div>
-
-      <p class="flow-text" style="padding-top: 5px;">Do you have an upcoming project and need reliable lighting design services?</p>
-      <p class="flow-text">We are happy to answer any questions you may have about our company, designers, completed projects or productions services we provide. </p><br>
-
-      <div class="center" style='width: 800px;'>
-        <div id="map" style='width: 1000px; height: 405px; text-align:center;'></div>
-      </div>
-
-      <script type="text/javascript">
-          handler = Gmaps.build('Google');
-          handler.buildMap({ internal: {id: 'map'} }, function(){
-            // be aware chrome >= 50 requires https for geolocation to work
-              var marker = handler.addMarker({
-              lat: 26.3698018,
-              lng: -81.8063622
-            });
-            handler.map.centerOn(marker);
-            handler.getMap().setZoom(18);
-                
-              });
-      </script>  
-      
-      <p class="flow-text" style="font-size: 16.5px">Address: <%=Company.last.address%></p>      
-       <%array = Company.last.phone.split('')%>
-       <%array.insert(3, ".")%>
-       <%array.insert(7, ".")%>
-       <p class="flow-text"style="font-size: 16.5px">Phone: <%=array.join%></p>
-
-      <p class="flow-text"style="font-size: 16.5px">
-      <a href="mailto:quotes@wcltg.com">Quotes@wcltg.com</a>
-      </p>
-
-      <p class="flow-text"style="font-size: 16.5px">
-      <a href="mailto:designs@wcltg.com">Designs@wcltg.com</a>
-      </p>
-
-      <p class="flow-text"style="font-size: 16.5px">
-      <a href="mailto:sales@wcltg.com">Sales@wcltg.com</a>
-      </p>
-
-      <p class="flow-text"style="font-size: 16.5px">
-      <a href="mailto:orders@wcltg.com">Orders@wcltg.com</a>
-      </p>
-
-      <p class="flow-text"style="font-size: 16.5px">
-      <a href="mailto:support@wcltg.com">Support@wcltg.com</a>
-      </p>                                                      
-            
-    </div>  
-  <br><br>
-
-</div>
-
 <a href="#" id="return-to-top"><i class="medium material-icons">navigation</i></a>
 
     
