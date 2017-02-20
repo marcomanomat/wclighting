@@ -1,0 +1,17 @@
+<div class="form container">
+	<div class="col-sm-6">
+<%= form_for @product_type do |f| %>
+  <p> You are Editing: </p>
+  <h3><%=@product_type.name%></h3>
+    <br><br>
+    <%= f.label :name, "Name of Fixture:"%>
+    <%= f.text_area(:name, placeholder: @product_type.name ) %>
+    <%= f.submit 'Finalize Edit', class: 'btn'%>
+    <%= link_to 'Delete', product_type_path(@product_type),
+  method: :delete,
+  data: { confirm: 'Are you sure you want to delete this?' }, class: 'btn'  %>
+  <br><br><%= link_to 'Back to Line Card', product_types_path, class: 'btn' %>
+  </div>
+<% end %>
+
+</div>

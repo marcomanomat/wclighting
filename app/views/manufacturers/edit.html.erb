@@ -1,0 +1,32 @@
+<div class="container">
+<%= form_for @manufacturer, :html => { :multipart => true } do |f| %>
+  <div class="col-sm-6">
+    <br><br>
+    <%= f.label :name, "Manufacturer's Name:"%>
+    <%= f.text_area(:name, placeholder: @manufacturer.name ) %>
+
+    <%= f.label :profile, "Profile Description:"%>    
+    <%= f.text_area(:profile, placeholder: @manufacturer.profile ) %>
+
+    <%= f.label :website, "Website:"%>
+    <%=f.text_area(:website, placeholder: @manufacturer.website ) %>
+  </div>
+
+  <div class="col-sm-6">
+    
+  <%= f.label :logo, "Logo"%>
+  <%= f.file_field:logo %><br>
+  <%=f.submit %>
+
+<br>
+<%= link_to 'Edit Photos', manufacturer_images_path(@manufacturer) %>
+  </div> <br><br>
+  <div id="fixtures"> 
+    <p>Line Card</p>
+    <%= f.collection_check_boxes(:product_type_ids, ProductType.all, :id, :name) %>
+  </div>
+</div>     
+
+<% end %>
+
+</div>

@@ -1,0 +1,30 @@
+<div class="container">
+<%= form_for @company, :html => { :multipart => true } do |f| %>
+  <div class="col-sm-6">
+    <br><br>
+    <%= f.label :name, "Your Company's Name:"%>
+    <%= f.text_area(:name, placeholder: @company.name ) %>
+
+    <%= f.label :phone, "Phone:"%>    
+    <%= f.text_area(:phone, placeholder: @company.phone ) %>
+
+    <%= f.label :address, "Address:"%>
+    <%=f.text_area(:address, placeholder: @company.address ) %>
+
+    <%= f.label :email, "Email:"%>
+    <%=f.text_area(:email, placeholder: @company.email ) %>
+  </div>
+
+  <div class="col-sm-6">
+    
+<%=f.submit %>
+
+
+</div>     
+
+<% end %>
+
+</div>     
+
+
+

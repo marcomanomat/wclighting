@@ -1,0 +1,8 @@
+<div class="nested-fields" style="padding-bottom: 10px;">
+
+  <div class="field">
+    <br><%= f.label :name, "Line Card(s)"%><br>
+  <%= f.collection_check_boxes(:name, ProductType.all, :name, :name) %>
+  </div>
+
+</div>
