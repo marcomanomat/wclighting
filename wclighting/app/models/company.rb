@@ -25,8 +25,8 @@ class Company < ApplicationRecord
             :storage => :s3,
             :bucket  => 'wclwebsite',
             :s3_credentials => {
-                :access_key_id => 'AKIAIQROUDPJ43PP5RVQ',
-                :secret_access_key => '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'
+                :access_key_id => 'AKIAI5RPXUOEMVGJCWGQ',
+                :secret_access_key => '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'
                 },
                 :s3_permissions => 'private',
                 :url => ":s3_domain_url"

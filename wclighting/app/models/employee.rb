@@ -10,8 +10,8 @@ class Employee < ApplicationRecord
             s3_region: 'us-east-1',
             :bucket  => 'wclwebsite',
             :s3_credentials => {
-		            :access_key_id => 'AKIAIQROUDPJ43PP5RVQ',
-		            :secret_access_key => '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'
+		            :access_key_id => 'AKIAI5RPXUOEMVGJCWGQ',
+		            :secret_access_key => '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'
                 }
 
 
